@@ -10,7 +10,13 @@ This repository contains some mock scripts and files to mimic what a code analys
 
 For the tutorial you will need two main folders:   
 
-- `activity-1-`
+- `activity-4-troubleshooting-a-docker-image
+- `activity-1-pulling-a-docker-image`
+- `activity-2-modify-a-docker-image`
+- `activity-3-building-a-docker-image`
+
+
+
 Additionally, the `utils` folder has files that are referenced by some of the GitHub Actions. The `data` folder has a dataset that is utilized by the mock analysis files that are used for this tutorial.
 
 ### Mock analysis file set up
