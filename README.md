@@ -10,7 +10,7 @@ This repository contains some mock scripts and files to mimic what a code analys
 
 For the tutorial you will need two main folders:   
 
-- `activity-4-troubleshooting-a-docker-image
+- `activity-4-troubleshooting-a-docker-image`
 - `activity-1-pulling-a-docker-image`
 - `activity-2-modify-a-docker-image`
 - `activity-3-building-a-docker-image`
