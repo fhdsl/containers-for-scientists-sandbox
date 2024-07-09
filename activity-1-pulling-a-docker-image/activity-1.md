@@ -7,50 +7,89 @@ Go here to [install Docker](https://www.docker.com/get-started), following the i
 If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).
 After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.
 
-## Getting started with Docker
+## Pull an image
 
 1. Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).
 
-2. First we need to get the Docker **image**. We do this by "pulling" it
+2. Open up the Docker Desktop app. Click on 'images' on the left. This shows the images you currently have available on your computer.
+
+3. We need to get the Docker **image** we want to use. We do this by "pulling" it
 
 ```
-docker pull rocker/tidyverse
+docker pull rocker/tidyverse:4
 ```
 
+4. To see what images we have we can run `docker image ls` and we should see `rocker/rstudio:4` show up now.
 
+## Run a container
 
-3. Open up the Docker Desktop app. Click on 'images' on the left. This shows the images you currently have available on your computer.
+1. Now if want to launch the image for use, we can use `docker run` to turn it into a **container**
 
-4. Return to your command line. Using [`cd`](https://www.geeksforgeeks.org/cd-command-in-linux-with-examples/) and [`ls`](https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/) navigate to your project repository (or whatever files you'd like to be accessible in your development environment) and we can start up a docker container using `docker run`.
-
-
-<details> <summary> To run the **Python docker image** </summary>
 ```
-docker run --rm -v $PWD:/home/jovyan/work -e JUPYTER_ENABLE_LAB=yes -p 8787:8787 jhudsl/reproducible-python
+docker run rocker/tidyverse:4
 ```
-Now in your internet browser, go to the address printed out. It should take you to Jupyter Lab.
-Now you are ready to develop inside a Docker container!
 
-</details>
+2. To see what containers we have running we have we can run:
 
-<details> <summary> To run the **R docker image** </summary>
-But you can change the `password` to whatever you'd like.
 ```
-docker run --rm -v $PWD:/home/rstudio -e PASSWORD=password -p 8787:8787 jhudsl/reproducible-r
+docker ps
 ```
+
+3. To run stuff interactively from the command line we can do:
+
+```
+docker exec -it <PUT_CONTAINER_ID_HERE> bash
+```
+
+4. To run a script using the docker container we could just add reference to a script at the end:
+
+**BUT! You will find that this command won't work yet though, why?**
+
+```
+docker exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
+```
+
+This won't work because the file `run_analysis.sh` is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.
+
+```
+bash: run_analysis.sh: No such file or directory
+```
+
+## Getting files on your container
+
+If we want to run `run_analysis.sh` there's two ways we could get our files on there.
+
+- We could download the files we need from online!
+
+We could `git clone` files from a repository or otherwise `wget` or `curl` files.
+
+- We could add a `volume` of files that are local to our computer. For this we will use the You'll `-v` or volume option.
+
+We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
+
+```
+docker run -v $PWD:cool-files rocker/tidyverse:4
+```
+
+Now we can run
+```
+docker exec -it 12f585b4029d bash /cool-files/run_analysis.sh
+
+docker exec -it 22006eae82d8 bash
+```
+
+## Running a port!
+
+
+```
+docker run -v $PWD:cool-files -p 8787:8787 rocker/tidyverse:4
+```
+
 Now in your internet browser, go to `localhost:8787`. You should see an RStudio login page.
 
 Login to RStudio. Your username will be `rstudio` and your password, will be whatever you set your password to be.
 
 Now you are ready to develop inside a Docker container!
-
-</details>
-
-To see what containers you have running or to clear out old containers, in Docker Desktop you can go to the `Containers/Apps` page.
-
-```{r, fig.alt="If you navigate to the Containers/Apps page in Docker Desktop, you should see a container in the list. It will be named something randomly (in this case ‘zen_merkle’). From this page you can stop or remove old containers as well as navigate to their browser page. ", out.width = "100%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfc8849fa4d_0_10")
-```
 
 ### A breakdown what these Docker run options are
 
