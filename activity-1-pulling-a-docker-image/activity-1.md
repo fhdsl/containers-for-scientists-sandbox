@@ -16,7 +16,7 @@ After you install Docker, start up Docker desktop by double clicking on the app.
 3. We need to get the Docker **image** we want to use. We do this by "pulling" it
 
 ```
-docker pull rocker/tidyverse:4
+docker pull rocker/rstudio:4
 ```
 
 4. To see what images we have we can run `docker image ls` and we should see `rocker/rstudio:4` show up now.
@@ -26,7 +26,7 @@ docker pull rocker/tidyverse:4
 1. Now if want to launch the image for use, we can use `docker run` to turn it into a **container**
 
 ```
-docker run rocker/tidyverse:4
+docker run rocker/rstudio:4
 ```
 
 2. To see what containers we have running we have we can run:
@@ -68,21 +68,19 @@ We could `git clone` files from a repository or otherwise `wget` or `curl` files
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
 ```
-docker run -v $PWD:cool-files rocker/tidyverse:4
+docker run -v $PWD:cool-files rocker/rstudio:4
 ```
 
 Now we can run
 ```
 docker exec -it 12f585b4029d bash /cool-files/run_analysis.sh
-
-docker exec -it 22006eae82d8 bash
 ```
 
 ## Running a port!
 
 
 ```
-docker run -v $PWD:cool-files -p 8787:8787 rocker/tidyverse:4
+docker run -v $PWD:cool-files -p 8787:8787 rocker/rstudio:4
 ```
 
 Now in your internet browser, go to `localhost:8787`. You should see an RStudio login page.
@@ -94,10 +92,6 @@ Now you are ready to develop inside a Docker container!
 ### A breakdown what these Docker run options are
 
 [Docker has super extensive documentation](https://docs.docker.com/)! But to get you started, here's the highlights for this `docker run` command:
-
-```{r, fig.alt="A breakdown of the docker run command. The remove option (`--rm`) automatically removes the container when docker run exits. Dash v, the volume option is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container. Dash e, the environment option is how you can specify any environment variables you will need. In this instance for the rocker image we need to specify a password. Dash p, the port option is how you specify What port you can connect to this on using your internet browser. The last part of the docker run command says what image to run, so in this instance, we are running a container using the jhudsl/reproducible-r image.", out.width = "100%", echo = FALSE}
-ottrpal::include_slide("https://docs.google.com/presentation/d/1IJ_uFxJud7OdIAr6p8ZOzvYs-SGDqa7g4cUHtUld03I/edit#slide=id.gfbc11e6ab0_0_18")
-```
 
 - **The remove option (`--rm`)**	Automatically removes the container when docker run exits.
 - **The volume option (`-v`)** is how you specify what files you’d like available in the container and where to find them. In this instance we are using the output of the pwd command (print working directory) so that wherever you run this command, the files in that directory will be available in the container. The part after the colon specifies where these files will be found in the container.

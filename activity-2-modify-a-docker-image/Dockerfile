@@ -1,16 +1,6 @@
-FROM rocker/tidyverse:4.0.2
-WORKDIR /rocker-build/
+FROM cansav09/practice-image:1
 
-# Commonly used R packages
-RUN Rscript -e  "install.packages( \
-    c('BiocManager', \
-      'R.utils', \
-      'rprojroot'))"
+RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
+    repos = 'https://cloud.r-project.org/')"
 
-
-RUN Rscript -e  "BiocManager::install( \
-  c('BiocGenerics', \
-    'BiocVersion'))"
-
-# Set password default
-ENV USER="rstudio" PASSWORD="rstudio" ROOT="TRUE"
+CMD ["echo", "Yay! I built a Docker image!"]
