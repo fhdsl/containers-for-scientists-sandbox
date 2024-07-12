@@ -1,6 +1,5 @@
 FROM cansav09/practice-image:1
 
-RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
-    repos = 'https://cloud.r-project.org/')"
+# Add a new package here 
 
-CMD ["echo", "Yay! I built a Docker image!"]
+CMD ["echo", "Yay! I built a Docker image"]

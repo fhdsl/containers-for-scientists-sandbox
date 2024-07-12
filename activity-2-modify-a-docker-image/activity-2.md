@@ -98,7 +98,15 @@ RUN Rscript -e "options(warn = 2); BiocManager::install( \
 
 ```
 
-To add a **Python package using pip**, you will need to add pip3 to install Python packages using this format:
+To add a **Python package using pip**, you will need to add pip3 to install Python packages using this format. But first you'll need to make sure you have pip installed using:
+
+Install pip:
+```
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3-pip
+```
+
+Then you can use pip install to install packages
 ```  
 RUN pip3 install \
     "somepackage==0.1.0"
