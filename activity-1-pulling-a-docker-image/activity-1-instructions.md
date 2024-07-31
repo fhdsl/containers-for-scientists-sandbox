@@ -16,7 +16,7 @@ After you install Docker, start up Docker desktop by double clicking on the app.
 3. We need to get the Docker **image** we want to use. We do this by "pulling" it
 
 ```
-docker pull rocker/rstudio:4
+docker pull cansav09/practice-image:1
 ```
 
 4. To see what images we have we can run `docker image ls` and we should see `rocker/rstudio:4` show up now.
@@ -26,7 +26,7 @@ docker pull rocker/rstudio:4
 1. Now if want to launch the image for use, we can use `docker run` to turn it into a **container**
 
 ```
-docker run rocker/rstudio:4
+docker run cansav09/practice-image:1
 ```
 
 2. To see what containers we have running we have we can run:
@@ -68,19 +68,19 @@ We could `git clone` files from a repository or otherwise `wget` or `curl` files
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
 ```
-docker run -v $PWD:cool-files rocker/rstudio:4
+docker run -v $PWD:/home cansav09/practice-image:1
 ```
 
 Now we can run
 ```
-docker exec -it 12f585b4029d bash /cool-files/run_analysis.sh
+docker exec -it 12f585b4029d bash /home/run_analysis.sh
 ```
 
 ## Running a port!
 
 
 ```
-docker run -v $PWD:cool-files -p 8787:8787 rocker/rstudio:4
+docker run -v $PWD:/home -p 8787:8787 cansav09/practice-image:1
 ```
 
 Now in your internet browser, go to `localhost:8787`. You should see an RStudio login page.

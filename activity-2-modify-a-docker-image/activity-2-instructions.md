@@ -6,7 +6,7 @@ Open up the Dockerfile in this folder!
 
 You'll notice we have this at the top for you:
 ```
-FROM rocker/rstudio:4
+FROM cansav09/practice-image:1
 ```
 
 This means we're going to take the existing image called, `rocker/rstudio:4` and build on to it.
