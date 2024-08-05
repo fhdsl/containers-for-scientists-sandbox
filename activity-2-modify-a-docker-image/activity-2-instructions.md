@@ -72,9 +72,6 @@ If all built successfully, you should see a message like:
 => => naming to docker.io/library/cool-new-image:2
 ```
 
-
-
-
 ### Bonus guide: Adding other kinds of packages!
 
 Starting off with your example Dockerfile, we will practice adding another package and re-build the docker image with a new package.
