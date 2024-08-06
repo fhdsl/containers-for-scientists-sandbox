@@ -8,8 +8,7 @@ This GitHub repository is sandbox of Docker to play with for the purposes of a w
 
 This repository contains some mock scripts and files to mimic what a code analysis repository might look like so Docker within this context can be demonstrated.
 
-For the tutorial you will need two main folders:   
-
+There are four activities:  
 
 - `activity-1-pulling-a-docker-image`
 - `activity-2-modify-a-docker-image`
