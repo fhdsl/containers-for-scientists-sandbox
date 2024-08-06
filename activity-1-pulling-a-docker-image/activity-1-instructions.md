@@ -13,7 +13,9 @@ After you install Docker, start up Docker desktop by double clicking on the app.
 
 2. Open up the Docker Desktop app. Click on 'images' on the left. This shows the images you currently have available on your computer.
 
-3. We need to get the Docker **image** we want to use. We do this by "pulling" it
+3. We need to get the Docker **image** we want to use. We do this by "pulling" it.
+
+Run this command in your Terminal or Command Prompt window: 
 
 ```
 docker pull cansav09/practice-image:1

@@ -9,7 +9,7 @@ You'll notice we have this at the top for you:
 FROM cansav09/practice-image:1
 ```
 
-This means we're going to take the existing image called, `rocker/rstudio:4` and build on to it.
+This means we're going to take the existing image called, `cansav09/practice-image:1` and build on to it.
 This image will be our base. There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.
 
 ### Build a Docker image from a Dockerfile
@@ -32,24 +32,12 @@ docker run cool-new-image
 
 We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image
 
-## Essential Docker commands:
-
-`FROM` is one of the [main commands that a Dockerfile can take as described by their documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
-
-Now you are also familiar with `CMD` which runs something when the container is built
-
-> **FROM** creates a layer from the another Docker image.
-> **CMD** specifies what command to run within the container.
-> **RUN** builds your application with make.
-> **COPY** adds files from your Docker client’s current directory.
-
-Next let's use `RUN` to add a package to our image.
-
 ### Add a package to the Dockerfile
 
 For anything we need ran in this image we are building we need to use the `RUN` command followed by the installation steps we'd need.
 
-Copy and paste this into your Dockerfile so we can add the `rmarkdown` package. AND remove the `CMD` line.
+- **Copy and paste** this into your Dockerfile so we can add the `rmarkdown` package.
+- **AND remove the `CMD` line**
 
 ```
 RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
@@ -71,6 +59,21 @@ If all built successfully, you should see a message like:
 => => writing image sha256:ayuahgfuiseohfauwheufhauwihefuahweufhawfbuibe  0.0s
 => => naming to docker.io/library/cool-new-image:2
 ```
+
+**End of official activity**
+
+## Essential Docker commands:
+
+`FROM` is one of the [main commands that a Dockerfile can take as described by their documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
+
+Now you are also familiar with `CMD` which runs something when the container is built
+
+> **FROM** creates a layer from the another Docker image.
+> **CMD** specifies what command to run within the container.
+> **RUN** builds your application with make.
+> **COPY** adds files from your Docker client’s current directory.
+
+Next let's use `RUN` to add a package to our image.
 
 ### Bonus guide: Adding other kinds of packages!
 
