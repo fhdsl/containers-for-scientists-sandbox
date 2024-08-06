@@ -36,7 +36,7 @@ We should have a message: `Yay! I built a Docker image` pop up upon building the
 
 For anything we need ran in this image we are building we need to use the `RUN` command followed by the installation steps we'd need.
 
-- **Copy and paste** this into your Dockerfile so we can add the `rmarkdown` package.
+- **Copy and paste** this into your Dockerfile below where it says `# Add a new package here ` so we can add the `rmarkdown` package.
 - **AND remove the `CMD` line**
 
 ```
