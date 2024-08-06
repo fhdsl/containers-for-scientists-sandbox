@@ -10,10 +10,10 @@ This repository contains some mock scripts and files to mimic what a code analys
 
 There are four activities:  
 
-- `activity-1-pulling-a-docker-image`
-- `activity-2-modify-a-docker-image`
-- `activity-3-building-a-docker-image`
-- `activity-4-troubleshooting-a-docker-image`
+- [`activity-1-pulling-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-1-instructions.html)
+- [`activity-2-modify-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-2-instructions.html)
+- [`activity-3-building-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-3-instructions.html)
+- [`activity-4-troubleshooting-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-4-instructions.html)
 
 
 Additionally, the `utils` folder has files that are referenced by some of the GitHub Actions. The `data` folder has a dataset that is utilized by the mock analysis files that are used for this tutorial.
