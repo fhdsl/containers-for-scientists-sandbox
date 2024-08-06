@@ -15,7 +15,7 @@ After you install Docker, start up Docker desktop by double clicking on the app.
 
 3. We need to get the Docker **image** we want to use. We do this by "pulling" it.
 
-Run this command in your Terminal or Command Prompt window: 
+Run this command in your Terminal or Command Prompt window:
 
 ```
 docker pull cansav09/practice-image:1
@@ -75,7 +75,7 @@ docker run -v $PWD:/home cansav09/practice-image:1
 
 Now we can run
 ```
-docker exec -it 12f585b4029d bash /home/run_analysis.sh
+docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
 
 ## Running a port!
