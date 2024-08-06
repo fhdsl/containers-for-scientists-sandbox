@@ -2,7 +2,7 @@
 
 This GitHub repository is sandbox of Docker to play with for the purposes of a workshop (or independent learning)
 
-[See the slides here to be guided through these activities]().
+[See the slides here to be guided through these activities](https://docs.google.com/presentation/d/1_SEn8VChlf8Iu1HglIvLrIykhfyIEXycIuWVLx5fKLA/edit#slide=id.g2ebd8828116_0_779).
 
 ## Files and set up
 
@@ -10,11 +10,11 @@ This repository contains some mock scripts and files to mimic what a code analys
 
 For the tutorial you will need two main folders:   
 
-- `activity-4-troubleshooting-a-docker-image`
+
 - `activity-1-pulling-a-docker-image`
 - `activity-2-modify-a-docker-image`
 - `activity-3-building-a-docker-image`
-
+- `activity-4-troubleshooting-a-docker-image`
 
 
 Additionally, the `utils` folder has files that are referenced by some of the GitHub Actions. The `data` folder has a dataset that is utilized by the mock analysis files that are used for this tutorial.
