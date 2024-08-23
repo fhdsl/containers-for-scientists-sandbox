@@ -1,56 +1,56 @@
-# Activity 1: Getting started with Docker
+# Activity 1: Getting started with Podman
 
-## Install Docker
+## Install Podman
 
-Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.
-
-If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).
-After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.
+Go here to [install Docker](https://podman.io/docs/installation), following the instructions for your particular operating system.
 
 ## Pull an image
 
 1. Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).
 
-2. Open up the Docker Desktop app. Click on 'images' on the left. This shows the images you currently have available on your computer.
+2. Start up Podman by running the following:
+
+```
+podman machine init
+podman machine start
+```
 
 3. We need to get the Docker **image** we want to use. We do this by "pulling" it.
 
 Run this command in your Terminal or Command Prompt window:
 
 ```
-docker pull cansav09/practice-image:1
+podman pull cansav09/practice-image:1
 ```
 
 4. To see what images we have we can run `docker image ls` and we should see `rocker/rstudio:4` show up now.
 
 ## Run a container
 
-1. Now if want to launch the image for use, we can use `docker run` to turn it into a **container**
+1. Now if want to launch the image for use, we can use `podman run` to turn it into a **container**
 
 ```
-docker run cansav09/practice-image:1
+podman run cansav09/practice-image:1
 ```
 
 2. To see what containers we have running we have we can run:
 
 ```
-docker ps
+podman ps
 ```
 
 3. To run stuff interactively from the command line we can do:
 
 ```
-docker exec -it <PUT_CONTAINER_ID_HERE> bash
+podman exec -it <PUT_CONTAINER_ID_HERE> bash
 ```
-
-And type in `exit` and hit enter to exit from interactive mode.
 
 4. To run a script using the docker container we could just add reference to a script at the end:
 
 **BUT! You will find that this command won't work yet though, why?**
 
 ```
-docker exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
+podman exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
 ```
 
 This won't work because the file `run_analysis.sh` is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.
@@ -72,10 +72,10 @@ We could `git clone` files from a repository or otherwise `wget` or `curl` files
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
 ```
-docker run -v $PWD:/home cansav09/practice-image:1
+podman run -v $PWD:/home cansav09/practice-image:1
 ```
 
 Now we can run
 ```
-docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
+podman exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
