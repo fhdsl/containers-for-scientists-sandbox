@@ -38,11 +38,11 @@ Run this command in your Terminal or Command Prompt window:
 podman pull cansav09/practice-image:1
 ```
 
-## Step 2: Check what images you have
+### Step 2: Check what images you have
 
 - [ ] To see what images we have we can run `docker image ls` and we should see `cansav09/practice-image:1` show up now.
 
-## Step 3: Run the docker image to start a container!
+### Step 3: Run the docker image to start a container!
 
 - [ ] Now if want to launch the image for use, we can use `podman run` to turn it into a **container**
 

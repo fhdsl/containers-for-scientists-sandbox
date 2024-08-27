@@ -395,11 +395,10 @@ it.</label></li>
 <p>Run this command in your Terminal or Command Prompt window:</p>
 <pre><code>podman pull cansav09/practice-image:1</code></pre>
 </div>
-</div>
-<div id="step-2-check-what-images-you-have" class="section level2"
-number="1.3">
-<h2><span class="header-section-number">1.3</span> Step 2: Check what
-images you have</h2>
+<div id="step-2-check-what-images-you-have" class="section level3"
+number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Step 2: Check what
+images you have</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" />To see what images we have we can
 run <code>docker image ls</code> and we should see
@@ -407,9 +406,9 @@ run <code>docker image ls</code> and we should see
 </ul>
 </div>
 <div id="step-3-run-the-docker-image-to-start-a-container"
-class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Step 3: Run the
-docker image to start a container!</h2>
+class="section level3" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Step 3: Run the
+docker image to start a container!</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" />Now if want to launch the image for
 use, we can use <code>podman run</code> to turn it into a
@@ -421,9 +420,10 @@ use, we can use <code>podman run</code> to turn it into a
 running we have we can run:</label></li>
 </ul>
 <pre><code>podman ps</code></pre>
+</div>
 <div id="step-4-run-a-single-command" class="section level3"
-number="1.4.1">
-<h3><span class="header-section-number">1.4.1</span> Step 4: Run a
+number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Step 4: Run a
 single command</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" />To run stuff interactively from the
@@ -432,8 +432,8 @@ command line we can do:</label></li>
 <pre><code>podman exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash</code></pre>
 </div>
 <div id="step-5-try-calling-a-script" class="section level3"
-number="1.4.2">
-<h3><span class="header-section-number">1.4.2</span> Step 5: Try calling
+number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Step 5: Try calling
 a script</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" />To run a script using the docker
@@ -450,14 +450,14 @@ files that our computer does; they only have the files we add to it.</p>
 </div>
 </div>
 <div id="activity-1b-add-a-volume-to-the-image" class="section level2"
-number="1.5">
-<h2><span class="header-section-number">1.5</span> Activity 1b: Add a
+number="1.3">
+<h2><span class="header-section-number">1.3</span> Activity 1b: Add a
 volume to the image</h2>
 <p>Our container is separate from our computer so if we want to use a
 file we have to attach it using a “volume”.</p>
 <div id="step-1-lets-add-our-containers-for-scientists-sandbox-files"
-class="section level3" number="1.5.1">
-<h3><span class="header-section-number">1.5.1</span> Step 1: Let’s add
+class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Step 1: Let’s add
 our containers-for-scientists-sandbox files</h3>
 <p>Point it so the volume has the workshop files</p>
 <p>If we want to run <code>run_analysis.sh</code> there’s two ways we
@@ -472,8 +472,8 @@ option.</li>
 </ul>
 </div>
 <div id="step-2-lets-add-our-containers-for-scientists-sandbox-files"
-class="section level3" number="1.5.2">
-<h3><span class="header-section-number">1.5.2</span> Step 2: Let’s add
+class="section level3" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> Step 2: Let’s add
 our containers-for-scientists-sandbox files</h3>
 <p>We can specify a particular file path on our computer or give it
 <code>$PWD</code> Then optionally we can give a <code>:</code> and a
@@ -485,8 +485,8 @@ will be stored at the absolute top of the container.</p>
 <pre><code>podman run -v $PWD:/home cansav09/practice-image:1</code></pre>
 </div>
 <div id="step-3-retry-calling-the-script" class="section level3"
-number="1.5.3">
-<h3><span class="header-section-number">1.5.3</span> Step 3: Retry
+number="1.3.3">
+<h3><span class="header-section-number">1.3.3</span> Step 3: Retry
 calling the script</h3>
 <ul class="task-list">
 <li><label><input type="checkbox" />Now we can run:</label></li>
