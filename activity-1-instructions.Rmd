@@ -5,7 +5,6 @@ output:
     toc_float:
       toc_collapsed: true
     toc_depth: 3
-    number_sections: true
 ---
 # Activity 0: Getting started with Docker
 
@@ -18,7 +17,7 @@ After you install Docker, start up Docker desktop by double clicking on the app.
 
 ### Step 1: Docker pull
 
-- [ ] We need to get the Docker **image** we want to use. We do this by "pulling" it.
+We need to get the Docker **image** we want to use. We do this by "pulling" it.
 
 Run this command in your Terminal or Command Prompt window:
 
@@ -28,17 +27,17 @@ docker pull cansav09/practice-image:1
 
 ### Step 2: Check what images you have
 
-- [ ] To see what images we have we can run `docker image ls` and we should see `cansav09/practice-image:1` show up now.
+To see what images we have we can run `docker image ls` and we should see `cansav09/practice-image:1` show up now.
 
 ### Step 3: Run the docker image to start a container!
 
-- [ ] Now if want to launch the image for use, we can use `docker run` to turn it into a **container**
+Now if want to launch the image for use, we can use `docker run` to turn it into a **container**
 
 ```
 docker run cansav09/practice-image:1
 ```
 
-- [ ] To see what containers we have running we have we can run:
+To see what containers we have running we have we can run:
 
 ```
 docker ps
@@ -46,7 +45,7 @@ docker ps
 
 ### Step 4: Run a single command
 
-- [ ] To run stuff interactively from the command line we can do:
+To run stuff interactively from the command line we can do:
 
 ```
 docker exec -it <PUT_CONTAINER_ID_HERE> bash
@@ -54,7 +53,7 @@ docker exec -it <PUT_CONTAINER_ID_HERE> bash
 
 ### Step 5: Try calling a script
 
-- [ ] To run a script using the docker container we could just add reference to a script at the end:
+To run a script using the docker container we could just add reference to a script at the end:
 
 **BUT! You will find that this command won't work yet though, why?**
 
@@ -85,14 +84,14 @@ If we want to run `run_analysis.sh` there's two ways we could get our files on t
 
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
-- [ ] Now we can run:
+Now we can run:
 ```
 docker run -v $PWD:/home cansav09/practice-image:1
 ```
 
 ### Step 3: Retry calling the script
 
-- [ ] Now we can run:
+Now we can run:
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
