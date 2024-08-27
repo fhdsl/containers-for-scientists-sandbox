@@ -11,6 +11,7 @@ This repository contains some mock scripts and files to mimic what a code analys
 There are four activities:  
 
 - [`activity-1-pulling-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-1-instructions.html)
+- [`activity-1-pulling-a-docker-image-podman`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-1-instructions-podman.html)
 - [`activity-2-modify-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-2-instructions.html)
 - [`activity-3-building-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-3-instructions.html)
 - [`activity-4-troubleshooting-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-4-instructions.html)
