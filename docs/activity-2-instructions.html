@@ -352,12 +352,12 @@ display: none;
 </div>
 
 
-<div id="activity-2-build-a-docker-image" class="section level1">
-<h1>Activity 2: Build a Docker image</h1>
+<div id="activity-2-build-a-dockerpodman-image" class="section level1">
+<h1>Activity 2: Build a Docker/Podman image</h1>
 <p>A Dockerfile is a recipe for how to build a docker image. The best
 way to learn to write Dockerfiles is to start off with one that is
 already written and modify it for your needs.</p>
-<p>Open up the Dockerfile in this folder!</p>
+<p>Open up the Dockerfile in the <code>activity-files</code> folder.</p>
 <p>You’ll notice we have this at the top for you:</p>
 <pre><code>FROM cansav09/practice-image:1</code></pre>
 <p>This means we’re going to take the existing image called,
@@ -365,20 +365,31 @@ already written and modify it for your needs.</p>
 will be our base. There are so many Docker images out there, that it
 might be that someone has already created a docker image with most of
 the functionality you need for your project.</p>
-<div id="build-a-docker-image-from-a-dockerfile" class="section level3">
-<h3>Build a Docker image from a Dockerfile</h3>
-<p>Now in your Command Prompt or Terminal navigate to this folder and
-run the following:</p>
+<div id="build-a-dockerpodman-image-from-a-dockerfile" class="section level3">
+<h3>Build a Docker/Podman image from a Dockerfile</h3>
+<ol style="list-style-type: decimal">
+<li><p>Now in your Command Prompt or Terminal navigate to the
+<code>activity-files</code> folder.</p></li>
+<li><p>With <code>activity-files</code> as your working directory, run
+the following:</p></li>
+</ol>
 <pre><code>docker build . -t cool-new-image</code></pre>
+<p>OR</p>
+<pre><code>podman build . -t cool-new-image</code></pre>
 <p>Optionally you could call this from somewhere else and use the
 <code>-f</code> option to specify the file path to the Dockerfile. But
 in the scenario above it just grabs the Dockerfile in our working
 directory.</p>
-<p>Navigate back to your Docker desktop and the <code>images</code>
-window. If your image built successfully, you should see a new image in
-your list!</p>
-<p>Let’s try running that image</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Navigate back to your Docker desktop and the <code>images</code>
+window or run <code>docker ps</code> or <code>podman ps</code>. If your
+image built successfully, you should see a new image in your
+list!</p></li>
+<li><p>Let’s try running that image</p></li>
+</ol>
 <pre><code>docker run cool-new-image</code></pre>
+<p>OR</p>
+<pre><code>podman run cool-new-image</code></pre>
 <p>We should have a message: <code>Yay! I built a Docker image</code>
 pop up upon building the image. Not super useful but we can see how
 we’ve edited the original image</p>
@@ -388,24 +399,46 @@ we’ve edited the original image</p>
 <p>For anything we need ran in this image we are building we need to use
 the <code>RUN</code> command followed by the installation steps we’d
 need.</p>
-<ul>
-<li><strong>Copy and paste</strong> this into your Dockerfile below
+<ol style="list-style-type: decimal">
+<li><p>Open up the file called <code>Dockerfile</code> in
+<code>activity-files</code>.</p></li>
+<li><p><strong>Copy and paste</strong> this into your Dockerfile below
 where it says <code># Add a new package here</code> so we can add the
-<code>rmarkdown</code> package.</li>
-<li><strong>AND remove the <code>CMD</code> line</strong></li>
-</ul>
+<code>rmarkdown</code> package.</p></li>
+</ol>
 <pre><code>RUN Rscript -e  &quot;options(warn = 2);install.packages(&#39;rmarkdown&#39;, \
     repos = &#39;https://cloud.r-project.org/&#39;)&quot;</code></pre>
-<p>Save your edited Dockerfile.</p>
-<p>Now re-run <code>docker build</code> as you did in the previous
-section. This time we’ll add a versioning tag using <code>:</code> in
-the <code>-t</code> option</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p><strong>AND remove the <code>CMD</code> line</strong></p></li>
+<li><p>Save your edited Dockerfile.</p></li>
+<li><p>Now re-run <code>docker build</code> (or
+<code>podman build</code>) as you did in the previous section. This time
+we’ll add a versioning tag using <code>:</code> in the <code>-t</code>
+option</p></li>
+</ol>
 <pre><code>docker build . -t cool-new-image:2</code></pre>
+<p>OR</p>
+<pre><code>podman build . -t cool-new-image:2</code></pre>
 <p>If all built successfully, you should see a message like:</p>
 <pre><code>=&gt; exporting to image                                                     0.0s
 =&gt; =&gt; exporting layers                                                    0.0s
 =&gt; =&gt; writing image sha256:ayuahgfuiseohfauwheufhauwihefuahweufhawfbuibe  0.0s
 =&gt; =&gt; naming to docker.io/library/cool-new-image:2</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Now let’s retry running the script from here!</p></li>
+<li><p>First run the container using the <code>2</code> image:</p></li>
+</ol>
+<pre><code>docker run -v $PWD:/home cool-new-image:2</code></pre>
+<p>OR</p>
+<pre><code>podman run -v $PWD:/home cool-new-image:2</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Run <code>docker ps</code> or <code>podman ps</code> can get you
+the container ID. Or look on your Docker Desktop</p></li>
+<li><p>Try running the script using the following command:</p></li>
+</ol>
+<pre><code>docker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
+<p>OR</p>
+<pre><code>podman exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
 <p><strong>End of official activity</strong></p>
 </div>
 <div id="essential-docker-commands" class="section level2">
