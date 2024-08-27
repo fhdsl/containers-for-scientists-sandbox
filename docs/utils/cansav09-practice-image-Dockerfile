@@ -1,0 +1,10 @@
+FROM rocker/rstudio:4
+
+# Add an R package:
+RUN Rscript -e  "options(warn = 2);install.packages(c( \
+    'ggplot2', \
+    'readr'), \
+    repos = 'https://cloud.r-project.org/')"
+
+
+	

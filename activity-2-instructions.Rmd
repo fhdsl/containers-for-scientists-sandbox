@@ -1,4 +1,13 @@
-# Activity 2: Build a Docker/Podman image
+---
+output:
+  html_document:
+    toc: true
+    toc_float:
+      toc_collapsed: true
+    toc_depth: 3
+    number_sections: true
+---
+# Activity 2:  Build/Modify a Docker/Podman image
 
 A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.
 
@@ -12,11 +21,18 @@ FROM cansav09/practice-image:1
 This means we're going to take the existing image called, `cansav09/practice-image:1` and build on to it.
 This image will be our base. There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.
 
-### Build a Docker/Podman image from a Dockerfile
+### Step 1: Use any file editor to open up the Dockerfile
 
-1. Now in your Command Prompt or Terminal navigate to the `activity-files` folder.
+### Step 2: Inspect the Dockerfile
+- [ ] Double click it and open the file to take a look at it with any default text editor.  
 
-2. With `activity-files` as your working directory, run the following:
+### Step 3: Change your working directory to activity-files
+
+- [ ]  Now in your Command Prompt or Terminal navigate to the `activity-files` folder. Use `cd` and don't forget to use tabs so you don't have to spell everything exactly
+
+### Step 4: Build the image from the Dockerfile
+
+- [ ]  With `activity-files` as your working directory, run the following:
 
 ```
 docker build . -t cool-new-image
@@ -28,9 +44,22 @@ podman build . -t cool-new-image
 
 Optionally you could call this from somewhere else and use the `-f` option to specify the file path to the Dockerfile. But in the scenario above it just grabs the Dockerfile in our working directory.
 
-3. Navigate back to your Docker desktop and the `images` window or run `docker ps` or `podman ps`. If your image built successfully, you should see a new image in your list!
+### Step 4: Inspect new image!
 
-4. Let's try running that image
+- [ ] Let's see if we have an image!
+```
+docker image ls
+```
+OR
+```
+podman image ls
+```
+
+### Step 5: Run the new image
+
+- [ ]  Navigate back to your Docker desktop and the `images` window or run `docker ps` or `podman ps`. If your image built successfully, you should see a new image in your list!
+
+- [ ] Let's try running that image
 
 ```
 docker run cool-new-image
@@ -40,26 +69,27 @@ OR
 podman run cool-new-image
 ```
 
-We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image
+### Step 6: See the minor difference!
 
-### Add a package to the Dockerfile
+- [ ] We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image
+
+### Step 7: Edit the Dockerfile so it has the installation step for rmarkdown package and remove the CMD step
 
 For anything we need ran in this image we are building we need to use the `RUN` command followed by the installation steps we'd need.
 
-1. Open up the file called `Dockerfile` in `activity-files`.
-
-2. **Copy and paste** this into your Dockerfile below where it says `# Add a new package here ` so we can add the `rmarkdown` package.
+- [ ] Open up the file called `Dockerfile` in `activity-files`.
+- [ ] **Copy and paste** this into your Dockerfile below where it says `# Add a new package here ` so we can add the `rmarkdown` package.
 
 ```
 RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
     repos = 'https://cloud.r-project.org/')"
 ```
+- [ ] **AND remove the `CMD` line**
+- [ ] Save your edited Dockerfile.
 
-3. **AND remove the `CMD` line**
+### Step 8: Re-build now that we’ve edited the Dockerfile
 
-4. Save your edited Dockerfile.
-
-5. Now re-run `docker build` (or `podman build`) as you did in the previous section. This time we'll add a versioning tag using `:` in the `-t` option
+Now re-run `docker build` (or `podman build`) as you did in the previous section. This time we'll add a versioning tag using `:` in the `-t` option
 
 ```
 docker build . -t cool-new-image:2
@@ -78,9 +108,11 @@ If all built successfully, you should see a message like:
 => => naming to docker.io/library/cool-new-image:2
 ```
 
-6. Now let's retry running the script from here!
+### Step 9: Run container from cool-new-image:2
 
-7. First run the container using the `2` image:
+Now let's retry running the script from here but we will need to specify the volume again!
+
+- [ ] First run the container using the `2` image:
 ```
 docker run -v $PWD:/home cool-new-image:2
 ```
@@ -89,10 +121,12 @@ OR
 podman run -v $PWD:/home cool-new-image:2
 ```
 
-8. Run `docker ps` or `podman ps` can get you the container ID. Or look on your Docker Desktop
+### Step 10: Re-Retry calling the script
+
+- [ ] Run `docker ps` or `podman ps` can get you the container ID. Or look on your Docker Desktop
 
 
-9. Try running the script using the following command:
+- [ ] Try running the script using the following command:
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
@@ -109,7 +143,7 @@ podman exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 
 
 
-## Essential Docker commands:
+## Bonus material: Essential Docker commands:
 
 `FROM` is one of the [main commands that a Dockerfile can take as described by their documentation](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/).
 

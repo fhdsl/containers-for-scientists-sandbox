@@ -1,0 +1,24 @@
+name: Containers for Scientists - Sandbox!
+output_dir: 'docs'
+navbar:
+  title: Containers
+  left:
+  - text: Home
+    href: index.html
+  - text: 1 Getting Started with Docker
+    href: activity-1-instructions.html
+  - text: 1 Getting Started with Podman
+    href: activity-1-instructions-podman.html
+  - text: 2 Modifying Images
+    href: activity-2-instructions.html
+  - text: 3 Sharing Images
+    href: activity-4-instructions.html
+  - text: 4 Troubleshooting
+    href: activity-4-instructions.html
+
+output:
+  html_document:
+    theme: cosmo
+    lib_dir: site_libs
+    self_contained: no
+    highlight: textmate

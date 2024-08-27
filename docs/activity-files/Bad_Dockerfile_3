@@ -1,0 +1,3 @@
+FROM cansav09/practice-image:1
+
+COPY activity-3-instructions.md .
