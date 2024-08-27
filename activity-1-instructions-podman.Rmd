@@ -68,11 +68,10 @@ podman exec -it <PUT_CONTAINER_ID_HERE> bash
 
 - [ ] To run a script using the docker container we could just add reference to a script at the end:
 
-**BUT! You will find that this command won't work yet though, why?**
-
 ```
 podman exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
 ```
+**BUT! You will find that this command won't work yet though, why?**
 
 This won't work because the file `run_analysis.sh` is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.
 
@@ -97,13 +96,14 @@ If we want to run `run_analysis.sh` there's two ways we could get our files on t
 
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
+- [ ] Now we can run:
 ```
 podman run -v $PWD:/home cansav09/practice-image:1
 ```
 
 ### Step 3: Retry calling the script
 
-Now we can run
+- [ ] Now we can run:
 ```
 podman exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```

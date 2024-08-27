@@ -462,13 +462,18 @@ our containers-for-scientists-sandbox files</h3>
 <code>$PWD</code> Then optionally we can give a <code>:</code> and a
 file path we’d like this to be stored on on the container. Otherwise it
 will be stored at the absolute top of the container.</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Now we can run:</label></li>
+</ul>
 <pre><code>docker run -v $PWD:/home cansav09/practice-image:1</code></pre>
 </div>
 <div id="step-3-retry-calling-the-script" class="section level3"
 number="1.4.3">
 <h3><span class="header-section-number">1.4.3</span> Step 3: Retry
 calling the script</h3>
-<p>Now we can run</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Now we can run:</label></li>
+</ul>
 <pre><code>docker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
 <p>Now we have a new error! What does this mean?</p>
 <p><strong>Question: Does our container have all of the same software

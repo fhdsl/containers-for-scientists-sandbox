@@ -1,7 +1,7 @@
 name: Containers for Scientists - Sandbox!
 output_dir: 'docs'
 navbar:
-  title: Containers
+  title: Containers for Scientists - Sandbox!
   left:
   - text: Home
     href: index.html

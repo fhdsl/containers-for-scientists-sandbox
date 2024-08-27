@@ -85,13 +85,14 @@ If we want to run `run_analysis.sh` there's two ways we could get our files on t
 
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
+- [ ] Now we can run:
 ```
 docker run -v $PWD:/home cansav09/practice-image:1
 ```
 
 ### Step 3: Retry calling the script
 
-Now we can run
+- [ ] Now we can run:
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
