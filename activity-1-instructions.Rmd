@@ -7,6 +7,13 @@ output:
     toc_depth: 3
     number_sections: true
   css: style.css
+  include-in-header:
+  - text: |
+      <style>
+      input[type="checkbox"] {
+        margin-right: 0.5ch;
+      }
+      </style>
 ---
 # Activity 0: Getting started with Docker
 

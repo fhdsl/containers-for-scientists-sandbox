@@ -6,6 +6,13 @@ output:
       toc_collapsed: true
     toc_depth: 3
     number_sections: true
+  include-in-header:
+  - text: |
+      <style>
+      input[type="checkbox"] {
+        margin-right: 0.5ch;
+      }
+      </style>
 ---
 # Activity 0: Getting started with Podman
 
