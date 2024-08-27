@@ -5,12 +5,13 @@ output:
     toc_float:
       toc_collapsed: true
     toc_depth: 3
+    number_sections: true
 ---
 # Activity 0: Getting started with Podman
 
-Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox
-Click the green button that says "Code" and choose zip file.
-Double click or right click and choose "unzip" or "decompress" to unzip this file.
+- [ ] Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox
+- [ ] Click the green button that says "Code" and choose zip file.
+- [ ] Double click or right click and choose "unzip" or "decompress" to unzip this file.
 
 ## Install Podman
 
@@ -29,7 +30,7 @@ podman machine start
 
 ### Step 1: Docker pull
 
-We need to get the Docker **image** we want to use. We do this by "pulling" it.
+- [ ] We need to get the Docker **image** we want to use. We do this by "pulling" it.
 
 Run this command in your Terminal or Command Prompt window:
 
@@ -39,17 +40,17 @@ podman pull cansav09/practice-image:1
 
 ### Step 2: Check what images you have
 
-To see what images we have we can run `docker image ls` and we should see `cansav09/practice-image:1` show up now.
+- [ ] To see what images we have we can run `docker image ls` and we should see `cansav09/practice-image:1` show up now.
 
 ### Step 3: Run the docker image to start a container!
 
-Now if want to launch the image for use, we can use `podman run` to turn it into a **container**
+- [ ] Now if want to launch the image for use, we can use `podman run` to turn it into a **container**
 
 ```
 podman run cansav09/practice-image:1
 ```
 
-To see what containers we have running we have we can run:
+- [ ] To see what containers we have running we have we can run:
 
 ```
 podman ps
@@ -57,7 +58,7 @@ podman ps
 
 ### Step 4: Run a single command
 
-To run stuff interactively from the command line we can do:
+- [ ] To run stuff interactively from the command line we can do:
 
 ```
 podman exec -it <PUT_CONTAINER_ID_HERE> bash
@@ -65,7 +66,7 @@ podman exec -it <PUT_CONTAINER_ID_HERE> bash
 
 ### Step 5: Try calling a script
 
-To run a script using the docker container we could just add reference to a script at the end:
+- [ ] To run a script using the docker container we could just add reference to a script at the end:
 
 ```
 podman exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
@@ -95,14 +96,14 @@ If we want to run `run_analysis.sh` there's two ways we could get our files on t
 
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
-Now we can run:
+- [ ] Now we can run:
 ```
 podman run -v $PWD:/home cansav09/practice-image:1
 ```
 
 ### Step 3: Retry calling the script
 
-Now we can run:
+- [ ] Now we can run:
 ```
 podman exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```

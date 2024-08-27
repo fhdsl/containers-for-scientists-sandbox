@@ -5,6 +5,7 @@ output:
     toc_float:
       toc_collapsed: true
     toc_depth: 3
+    number_sections: true
 ---
 # Activity 2:  Build/Modify a Docker/Podman image
 
@@ -23,15 +24,15 @@ This image will be our base. There are so many Docker images out there, that it 
 ### Step 1: Use any file editor to open up the Dockerfile
 
 ### Step 2: Inspect the Dockerfile
-Double click it and open the file to take a look at it with any default text editor.  
+- [ ] Double click it and open the file to take a look at it with any default text editor.  
 
 ### Step 3: Change your working directory to activity-files
 
-Now in your Command Prompt or Terminal navigate to the `activity-files` folder. Use `cd` and don't forget to use tabs so you don't have to spell everything exactly
+- [ ]  Now in your Command Prompt or Terminal navigate to the `activity-files` folder. Use `cd` and don't forget to use tabs so you don't have to spell everything exactly
 
 ### Step 4: Build the image from the Dockerfile
 
-With `activity-files` as your working directory, run the following:
+- [ ]  With `activity-files` as your working directory, run the following:
 
 ```
 docker build . -t cool-new-image
@@ -45,7 +46,7 @@ Optionally you could call this from somewhere else and use the `-f` option to sp
 
 ### Step 4: Inspect new image!
 
-Let's see if we have an image!
+- [ ] Let's see if we have an image!
 ```
 docker image ls
 ```
@@ -56,9 +57,9 @@ podman image ls
 
 ### Step 5: Run the new image
 
- Navigate back to your Docker desktop and the `images` window or run `docker ps` or `podman ps`. If your image built successfully, you should see a new image in your list!
+- [ ]  Navigate back to your Docker desktop and the `images` window or run `docker ps` or `podman ps`. If your image built successfully, you should see a new image in your list!
 
-Let's try running that image
+- [ ] Let's try running that image
 
 ```
 docker run cool-new-image
@@ -70,21 +71,21 @@ podman run cool-new-image
 
 ### Step 6: See the minor difference!
 
-We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image
+- [ ] We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image
 
 ### Step 7: Edit the Dockerfile so it has the installation step for rmarkdown package and remove the CMD step
 
 For anything we need ran in this image we are building we need to use the `RUN` command followed by the installation steps we'd need.
 
-Open up the file called `Dockerfile` in `activity-files`.
-**Copy and paste** this into your Dockerfile below where it says `# Add a new package here ` so we can add the `rmarkdown` package.
+- [ ] Open up the file called `Dockerfile` in `activity-files`.
+- [ ] **Copy and paste** this into your Dockerfile below where it says `# Add a new package here ` so we can add the `rmarkdown` package.
 
 ```
 RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
     repos = 'https://cloud.r-project.org/')"
 ```
-**AND remove the `CMD` line**
-Save your edited Dockerfile.
+- [ ] **AND remove the `CMD` line**
+- [ ] Save your edited Dockerfile.
 
 ### Step 8: Re-build now that we’ve edited the Dockerfile
 
@@ -111,7 +112,7 @@ If all built successfully, you should see a message like:
 
 Now let's retry running the script from here but we will need to specify the volume again!
 
-First run the container using the `2` image:
+- [ ] First run the container using the `2` image:
 ```
 docker run -v $PWD:/home cool-new-image:2
 ```
@@ -122,10 +123,10 @@ podman run -v $PWD:/home cool-new-image:2
 
 ### Step 10: Re-Retry calling the script
 
-Run `docker ps` or `podman ps` can get you the container ID. Or look on your Docker Desktop
+- [ ] Run `docker ps` or `podman ps` can get you the container ID. Or look on your Docker Desktop
 
 
-Try running the script using the following command:
+- [ ] Try running the script using the following command:
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
