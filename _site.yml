@@ -5,7 +5,7 @@ navbar:
   left:
   - text: Home
     href: index.html
-  - text: 1 Getting Started with Docker
+  - text: 1 Getting Started with Containers
     href: activity-1-instructions.html
   - text: 2 Modifying Images
     href: activity-2-instructions.html
