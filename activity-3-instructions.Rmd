@@ -5,7 +5,7 @@ output:
     toc_float:
       toc_collapsed: true
     toc_depth: 3
-    number_sections: true
+    number_sections: false
 css: style.css
 ---
 # Sharing a Docker image

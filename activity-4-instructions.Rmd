@@ -5,6 +5,7 @@ output:
     toc_float:
       toc_collapsed: true
     toc_depth: 3
+    number_sections: false
 css: style.css
 ---
 
