@@ -125,7 +125,6 @@ Now we have a new error! What does this mean?
 
 **Question: Does our container have all of the same software that our computer has?**
 
-
 ## Podman
 ### Set up Podman and workshop files
 <input type="checkbox"> Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox  
