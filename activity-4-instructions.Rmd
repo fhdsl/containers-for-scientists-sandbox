@@ -5,13 +5,13 @@ output:
     toc_float:
       toc_collapsed: true
     toc_depth: 3
-    number_sections: true
+css: style.css
 ---
 
 # Troubleshooting a Docker image
 
 
-There are three dockerfiles in this folder. Each has something slightly wrong with it.
+There are three Dockerfiles in this folder. Each has something slightly wrong with it.
 
 Use the following `docker build` commands and work to pinpoint the error and fix it.
 

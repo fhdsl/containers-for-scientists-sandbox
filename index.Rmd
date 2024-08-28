@@ -1,4 +1,14 @@
-# Containers for Scientists
+---
+title: Containers for Scientists
+output:
+  html_document:
+    toc: true
+    toc_float:
+      toc_collapsed: true
+    toc_depth: 3
+    number_sections: true
+css: style.css
+---
 
 This GitHub repository is sandbox of Docker to play with for the purposes of a workshop (or independent learning)
 

@@ -61,6 +61,7 @@ if (window.hljs) {
 
 
 
+<link rel="stylesheet" href="style.css" type="text/css" />
 
 
 
@@ -359,7 +360,8 @@ Build/Modify a Docker/Podman image</h1>
 <p>A Dockerfile is a recipe for how to build a docker image. The best
 way to learn to write Dockerfiles is to start off with one that is
 already written and modify it for your needs.</p>
-<p>Open up the Dockerfile in the <code>activity-files</code> folder.</p>
+<p><input type="checkbox"> Open up the Dockerfile in the
+<code>activity-files</code> folder.</p>
 <p>You’ll notice we have this at the top for you:</p>
 <pre><code>FROM cansav09/practice-image:1</code></pre>
 <p>This means we’re going to take the existing image called,
@@ -376,30 +378,24 @@ file editor to open up the Dockerfile</h3>
 number="1.0.2">
 <h3><span class="header-section-number">1.0.2</span> Step 2: Inspect the
 Dockerfile</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" />Double click it and open the file to
-take a look at it with any default text editor.</label></li>
-</ul>
+<p><input type="checkbox"> Double click it and open the file to take a
+look at it with any default text editor.</p>
 </div>
 <div id="step-3-change-your-working-directory-to-activity-files"
 class="section level3" number="1.0.3">
 <h3><span class="header-section-number">1.0.3</span> Step 3: Change your
 working directory to activity-files</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" />Now in your Command Prompt or
-Terminal navigate to the <code>activity-files</code> folder. Use
-<code>cd</code> and don’t forget to use tabs so you don’t have to spell
-everything exactly</label></li>
-</ul>
+<p><input type="checkbox"> Now in your Command Prompt or Terminal
+navigate to the <code>activity-files</code> folder. Use <code>cd</code>
+and don’t forget to use tabs so you don’t have to spell everything
+exactly</p>
 </div>
 <div id="step-4-build-the-image-from-the-dockerfile"
 class="section level3" number="1.0.4">
 <h3><span class="header-section-number">1.0.4</span> Step 4: Build the
 image from the Dockerfile</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" />With <code>activity-files</code> as
-your working directory, run the following:</label></li>
-</ul>
+<p><input type="checkbox"> With <code>activity-files</code> as your
+working directory, run the following:</p>
 <pre><code>docker build . -t cool-new-image</code></pre>
 <p>OR</p>
 <pre><code>podman build . -t cool-new-image</code></pre>
@@ -412,10 +408,7 @@ directory.</p>
 number="1.0.5">
 <h3><span class="header-section-number">1.0.5</span> Step 4: Inspect new
 image!</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" />Let’s see if we have an
-image!</label></li>
-</ul>
+<p><input type="checkbox"> Let’s see if we have an image!</p>
 <pre><code>docker image ls</code></pre>
 <p>OR</p>
 <pre><code>podman image ls</code></pre>
@@ -424,14 +417,11 @@ image!</label></li>
 number="1.0.6">
 <h3><span class="header-section-number">1.0.6</span> Step 5: Run the new
 image</h3>
-<ul class="task-list">
-<li><p><label><input type="checkbox" />Navigate back to your Docker
-desktop and the <code>images</code> window or run <code>docker ps</code>
-or <code>podman ps</code>. If your image built successfully, you should
-see a new image in your list!</label></p></li>
-<li><p><label><input type="checkbox" />Let’s try running that
-image</label></p></li>
-</ul>
+<p><input type="checkbox"> Navigate back to your Docker desktop and the
+<code>images</code> window or run <code>docker ps</code> or
+<code>podman ps</code>. If your image built successfully, you should see
+a new image in your list!</p>
+<p><input type="checkbox"> Let’s try running that image</p>
 <pre><code>docker run cool-new-image</code></pre>
 <p>OR</p>
 <pre><code>podman run cool-new-image</code></pre>
@@ -440,12 +430,9 @@ image</label></p></li>
 number="1.0.7">
 <h3><span class="header-section-number">1.0.7</span> Step 6: See the
 minor difference!</h3>
-<ul class="task-list">
-<li><label><input type="checkbox" />We should have a message:
+<p><input type="checkbox"> We should have a message:
 <code>Yay! I built a Docker image</code> pop up upon building the image.
-Not super useful but we can see how we’ve edited the original
-image</label></li>
-</ul>
+Not super useful but we can see how we’ve edited the original image</p>
 </div>
 <div
 id="step-7-edit-the-dockerfile-so-it-has-the-installation-step-for-rmarkdown-package-and-remove-the-cmd-step"
@@ -456,22 +443,15 @@ remove the CMD step</h3>
 <p>For anything we need ran in this image we are building we need to use
 the <code>RUN</code> command followed by the installation steps we’d
 need.</p>
-<ul class="task-list">
-<li><label><input type="checkbox" />Open up the file called
-<code>Dockerfile</code> in <code>activity-files</code>.</label></li>
-<li><label><input type="checkbox" /><strong>Copy and paste</strong> this
-into your Dockerfile below where it says
-<code># Add a new package here</code> so we can add the
-<code>rmarkdown</code> package.</label></li>
-</ul>
+<p><input type="checkbox"> Open up the file called
+<code>Dockerfile</code> in <code>activity-files</code>.
+<input type="checkbox"> <strong>Copy and paste</strong> this into your
+Dockerfile below where it says <code># Add a new package here</code> so
+we can add the <code>rmarkdown</code> package.</p>
 <pre><code>RUN Rscript -e  &quot;options(warn = 2);install.packages(&#39;rmarkdown&#39;, \
     repos = &#39;https://cloud.r-project.org/&#39;)&quot;</code></pre>
-<ul class="task-list">
-<li><label><input type="checkbox" /><strong>AND remove the
-<code>CMD</code> line</strong></label></li>
-<li><label><input type="checkbox" />Save your edited
-Dockerfile.</label></li>
-</ul>
+<p><input type="checkbox"> <strong>AND remove the <code>CMD</code>
+line</strong> <input type="checkbox"> Save your edited Dockerfile.</p>
 </div>
 <div id="step-8-re-build-now-that-weve-edited-the-dockerfile"
 class="section level3" number="1.0.9">
@@ -495,10 +475,8 @@ class="section level3" number="1.0.10">
 container from cool-new-image:2</h3>
 <p>Now let’s retry running the script from here but we will need to
 specify the volume again!</p>
-<ul class="task-list">
-<li><label><input type="checkbox" />First run the container using the
-<code>2</code> image:</label></li>
-</ul>
+<p><input type="checkbox"> First run the container using the
+<code>2</code> image:</p>
 <pre><code>docker run -v $PWD:/home cool-new-image:2</code></pre>
 <p>OR</p>
 <pre><code>podman run -v $PWD:/home cool-new-image:2</code></pre>
@@ -507,13 +485,11 @@ specify the volume again!</p>
 number="1.0.11">
 <h3><span class="header-section-number">1.0.11</span> Step 10: Re-Retry
 calling the script</h3>
-<ul class="task-list">
-<li><p><label><input type="checkbox" />Run <code>docker ps</code> or
+<p><input type="checkbox"> Run <code>docker ps</code> or
 <code>podman ps</code> can get you the container ID. Or look on your
-Docker Desktop</label></p></li>
-<li><p><label><input type="checkbox" />Try running the script using the
-following command:</label></p></li>
-</ul>
+Docker Desktop</p>
+<p><input type="checkbox"> Try running the script using the following
+command:</p>
 <pre><code>docker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
 <p>OR</p>
 <pre><code>podman exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
