@@ -13,7 +13,7 @@
 
 <title>Build/Modify a Docker/Podman image</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27.1/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -369,6 +369,7 @@ the functionality you need for your project.</p>
 <div id="step-1-use-any-file-editor-to-open-up-the-dockerfile"
 class="section level3">
 <h3>Step 1: Use any file editor to open up the Dockerfile</h3>
+<p>Usually double clicking will work.</p>
 </div>
 <div id="step-2-inspect-the-dockerfile" class="section level3">
 <h3>Step 2: Inspect the Dockerfile</h3>
@@ -381,7 +382,7 @@ class="section level3">
 <p><input type="checkbox"> Now in your Command Prompt or Terminal
 navigate to the <code>activity-files</code> folder. Use <code>cd</code>
 and don’t forget to use tabs so you don’t have to spell everything
-exactly</p>
+exactly.</p>
 </div>
 <div id="step-4-build-the-image-from-the-dockerfile"
 class="section level3">
@@ -408,8 +409,8 @@ directory.</p>
 <p><input type="checkbox"> Navigate back to your Docker desktop and the
 <code>images</code> window or run <code>docker ps</code> or
 <code>podman ps</code>. If your image built successfully, you should see
-a new image in your list!</p>
-<p><input type="checkbox"> Let’s try running that image</p>
+a new image in your list!<br />
+<input type="checkbox"> Let’s try running that image.</p>
 <pre><code>docker run cool-new-image</code></pre>
 <p>OR</p>
 <pre><code>podman run cool-new-image</code></pre>
@@ -418,7 +419,7 @@ a new image in your list!</p>
 <h3>Step 6: See the minor difference!</h3>
 <p><input type="checkbox"> We should have a message:
 <code>Yay! I built a Docker image</code> pop up upon building the image.
-Not super useful but we can see how we’ve edited the original image</p>
+Not super useful but we can see how we’ve edited the original image.</p>
 </div>
 <div
 id="step-7-edit-the-dockerfile-so-it-has-the-installation-step-for-rmarkdown-package-and-remove-the-cmd-step"
@@ -429,21 +430,23 @@ rmarkdown package and remove the CMD step</h3>
 the <code>RUN</code> command followed by the installation steps we’d
 need.</p>
 <p><input type="checkbox"> Open up the file called
-<code>Dockerfile</code> in <code>activity-files</code>.
+<code>Dockerfile</code> in <code>activity-files</code>.<br />
 <input type="checkbox"> <strong>Copy and paste</strong> this into your
 Dockerfile below where it says <code># Add a new package here</code> so
 we can add the <code>rmarkdown</code> package.</p>
 <pre><code>RUN Rscript -e  &quot;options(warn = 2);install.packages(&#39;rmarkdown&#39;, \
     repos = &#39;https://cloud.r-project.org/&#39;)&quot;</code></pre>
 <p><input type="checkbox"> <strong>AND remove the <code>CMD</code>
-line</strong> <input type="checkbox"> Save your edited Dockerfile.</p>
+line</strong>.<br />
+<input type="checkbox"> Save your edited Dockerfile.</p>
 </div>
 <div id="step-8-re-build-now-that-weve-edited-the-dockerfile"
 class="section level3">
 <h3>Step 8: Re-build now that we’ve edited the Dockerfile</h3>
-<p>Now re-run <code>docker build</code> (or <code>podman build</code>)
-as you did in the previous section. This time we’ll add a versioning tag
-using <code>:</code> in the <code>-t</code> option</p>
+<p><input type="checkbox">Now re-run <code>docker build</code> (or
+<code>podman build</code>) as you did in the previous section. This time
+we’ll add a versioning tag using <code>:</code> in the <code>-t</code>
+option.</p>
 <pre><code>docker build . -t cool-new-image:2</code></pre>
 <p>OR</p>
 <pre><code>podman build . -t cool-new-image:2</code></pre>
@@ -468,9 +471,8 @@ specify the volume again!</p>
 <h3>Step 10: Re-Retry calling the script</h3>
 <p><input type="checkbox"> Run <code>docker ps</code> or
 <code>podman ps</code> can get you the container ID. Or look on your
-Docker Desktop</p>
-<p><input type="checkbox"> Try running the script using the following
-command:</p>
+Docker Desktop. <input type="checkbox"> Try running the script using the
+following command:</p>
 <pre><code>docker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
 <p>OR</p>
 <pre><code>podman exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
