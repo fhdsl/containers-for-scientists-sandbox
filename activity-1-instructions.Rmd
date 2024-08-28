@@ -10,10 +10,9 @@ css: style.css
 ---
 # Activity 0: Getting started with Docker
 
-Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.
-
-If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).
-After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.
+<input type="checkbox">Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.  
+<input type="checkbox">If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).  
+<input type="checkbox">After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.  
 
 ## Activity 1: Pull and run a Docker image
 

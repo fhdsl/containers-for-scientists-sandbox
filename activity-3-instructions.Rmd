@@ -10,7 +10,6 @@ css: style.css
 ---
 # Sharing a Docker image
 
-
 To share our docker image with others (or ourselves), we can push it to an online repository.
 
 While there are lots of container registry options, for the purposes of this tutorial, we'll use Dockerhub.

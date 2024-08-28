@@ -10,9 +10,9 @@ css: style.css
 ---
 # Activity 0: Getting started with Podman
 
-<input type="checkbox">Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox
-<input type="checkbox">Click the green button that says "Code" and choose zip file.
-<input type="checkbox">Double click or right click and choose "unzip" or "decompress" to unzip this file.
+<input type="checkbox">Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox  
+<input type="checkbox">Click the green button that says "Code" and choose zip file.  
+<input type="checkbox">Double click or right click and choose "unzip" or "decompress" to unzip this file.  
 
 ## Install Podman
 
