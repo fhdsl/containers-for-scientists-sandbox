@@ -12,13 +12,15 @@ css: style.css
 ```{r echo = FALSE, show = FALSE}
 knitr::opts_chunk$set(number_sections = FALSE)
 ```
-# Activity 0: Set Up Podman
+## Activity 0: Set Up Podman and workshop files
 
-<input type="checkbox">Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox  
-<input type="checkbox">Click the green button that says "Code" and choose zip file.  
-<input type="checkbox">Double click or right click and choose "unzip" or "decompress" to unzip this file.  
+<input type="checkbox"> Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox  
+<input type="checkbox"> Click the green button that says "Code" and choose zip file.  
+<input type="checkbox"> Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox  
+<input type="checkbox"> Put this file on your desktop so it is easily findable. 
+<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file. 
 
-## Install Podman
+### Install Podman
 
 Go here to [install Podman](https://podman.io/docs/installation), following the instructions for your particular operating system.
 
