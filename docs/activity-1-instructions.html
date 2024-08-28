@@ -356,7 +356,14 @@ div.tocify {
 
 <div id="activity-0-set-up-docker" class="section level1">
 <h1>Activity 0: Set Up Docker</h1>
-<p><input type="checkbox"> Go here to <a
+<p><input type="checkbox"> Download the files for this activity by going
+here: <a
+href="https://github.com/fhdsl/containers-for-scientists-sandbox"
+class="uri">https://github.com/fhdsl/containers-for-scientists-sandbox</a><br />
+<input type="checkbox"> Put this file on your desktop so it is easily
+findable. <input type="checkbox"> Double click the zip file (or right
+click and choose “unzip” or “decompress” to unzip the file.
+<input type="checkbox"> Go here to <a
 href="https://www.docker.com/get-started">install Docker</a>, following
 the instructions for your particular operating system.<br />
 <input type="checkbox"> If you don’t have a Docker account create an
@@ -367,6 +374,16 @@ desktop by double clicking on the app. It may take some time to start
 up.</p>
 <div id="activity-1-pull-and-run-a-docker-image" class="section level2">
 <h2>Activity 1: Pull and run a Docker image</h2>
+<p><strong>This activity is built so that you will encounter errors that
+this guide will work you through!</strong> Most common container
+stumbling block is understanding the idea that containers are isolated
+from your computer</p>
+<p>Which means: If your computer has files, software, or anything else.
+Your container by default does NOT have it unless you do something to
+get those files and software on there.</p>
+<p>We will encounter both an error of when we don’t have a file we need
+AND an error of when we don’t have a software package we need. We will
+guide you through what to do when these expected errors occur.</p>
 <div id="step-1-docker-pull" class="section level3">
 <h3>Step 1: Docker pull</h3>
 <p>We need to get the Docker <strong>image</strong> we want to use. We
@@ -407,6 +424,8 @@ could just add reference to a script at the end:</p>
 <p><strong>BUT! You will find that this command won’t work yet though,
 why?</strong></p>
 <pre><code>bash: run_analysis.sh: No such file or directory</code></pre>
+<p><strong>Question: Does our container have all of the same files that
+our computer has?</strong></p>
 <p>This won’t work because the file <code>run_analysis.sh</code> is not
 a file that our container has. Docker containers do not have all the
 files that our computer does; they only have the files we add to it.</p>
@@ -430,20 +449,22 @@ could get our files on there.</p>
 computer. For this we will use the You’ll <code>-v</code> or volume
 option. We’ll do this in the next step.</li>
 </ul>
-</div>
-<div id="step-2-lets-add-our-containers-for-scientists-sandbox-files"
-class="section level3">
-<h3>Step 2: Let’s add our containers-for-scientists-sandbox files</h3>
 <p>We can specify a particular file path on our computer or give it
 <code>$PWD</code> Then optionally we can give a <code>:</code> and a
 file path we’d like this to be stored on on the container. Otherwise it
 will be stored at the absolute top of the container.</p>
 <p><input type="checkbox"> Now we can run:</p>
-<pre><code>docker run -v $PWD:/home cansav09/practice-image:1</code></pre>
+<pre><code>docker run -v $pwd:/home cansav09/practice-image:1</code></pre>
+<p>If you have a windows machine you may have to run this variant
+instead. This version has a different <code>${}</code> around the
+<code>pwd</code> part.</p>
+<pre><code>docker run -v ${pwd}:/home cansav09/practice-image:1</code></pre>
 </div>
-<div id="step-3-retry-calling-the-script" class="section level3">
-<h3>Step 3: Retry calling the script</h3>
-<p><input type="checkbox"> Now we can run:</p>
+<div id="step-2-retry-calling-the-script" class="section level3">
+<h3>Step 2: Retry calling the script</h3>
+<p><input type="checkbox"> Now we can run the folowing command but we
+will have to run <code>docker ps</code> and get the container ID we need
+to put here.</p>
 <pre><code>docker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
 <p>Now we have a new error! What does this mean?</p>
 <p><strong>Question: Does our container have all of the same software
