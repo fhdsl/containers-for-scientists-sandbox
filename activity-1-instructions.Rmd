@@ -80,6 +80,8 @@ docker exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
 bash: run_analysis.sh: No such file or directory
 ```
 
+**Question: Does our container have all of the same files that our computer has?**
+
 This won't work because the file `run_analysis.sh` is not a file that our container has. Docker containers do not have all the files that our computer does; they only have the files we add to it.
 
 ## Activity 1b: Add a volume to the image
@@ -99,16 +101,18 @@ We can specify a particular file path on our computer or give it `$PWD` Then opt
 
 <input type="checkbox"> Now we can run:  
 ```
-docker run -v $PWD:/home cansav09/practice-image:1
+docker run -v $pwd:/home cansav09/practice-image:1
 ```
-
+If you have a windows machine you may have to run this variant instead. This version has a different `${}` around the `pwd` part. 
+```
+docker run -v ${pwd}:/home cansav09/practice-image:1
+```
 ### Step 2: Retry calling the script
 
-<input type="checkbox"> Now we can run:  
+<input type="checkbox"> Now we can run the folowing command but we will have to run `docker ps` and get the container ID we need to put here.   
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
-
 Now we have a new error! What does this mean?
 
 **Question: Does our container have all of the same software that our computer has?**
