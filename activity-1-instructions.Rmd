@@ -117,7 +117,7 @@ docker run -v ${pwd}:/home cansav09/practice-image:1
 ```
 ### Step 2: Retry calling the script
 
-<input type="checkbox"> Now we can run the folowing command but we will have to run `docker ps` and get the container ID we need to put here.   
+<input type="checkbox"> Now we can run the following command but we will have to run `docker ps` and get the container ID we need to put here.   
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
