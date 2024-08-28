@@ -372,7 +372,7 @@ system.</p>
 <p><input type="checkbox"> Open up your <a
 href="https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955">command
 line</a>.</p>
-<p><input type="checkbox">Start up Podman by running the following:</p>
+<p><input type="checkbox"> Start up Podman by running the following:</p>
 <pre><code>podman machine init
 podman machine start</code></pre>
 </div>
@@ -388,31 +388,31 @@ Prompt window:</p>
 </div>
 <div id="step-2-check-what-images-you-have" class="section level3">
 <h3>Step 2: Check what images you have</h3>
-<p><input type="checkbox">To see what images we have we can run
+<p><input type="checkbox"> To see what images we have we can run
 <code>docker image ls</code>.<br />
-<input type="checkbox">You should see
+<input type="checkbox"> You should see
 <code>cansav09/practice-image:1</code> show up in the output.</p>
 </div>
 <div id="step-3-run-the-docker-image-to-start-a-container"
 class="section level3">
 <h3>Step 3: Run the docker image to start a container!</h3>
-<p><input type="checkbox">Now if want to launch the image for use, we
+<p><input type="checkbox"> Now if want to launch the image for use, we
 can use <code>podman run</code> to turn it into a
 <strong>container</strong>.</p>
 <pre><code>podman run cansav09/practice-image:1</code></pre>
-<p><input type="checkbox">To see what containers we have running we have
-we can run:</p>
+<p><input type="checkbox"> To see what containers we have running we
+have we can run:</p>
 <pre><code>podman ps</code></pre>
 </div>
 <div id="step-4-run-a-single-command" class="section level3">
 <h3>Step 4: Run a single command</h3>
-<p><input type="checkbox">To run stuff interactively from the command
+<p><input type="checkbox"> To run stuff interactively from the command
 line we can do:</p>
 <pre><code>podman exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash</code></pre>
 </div>
 <div id="step-5-try-calling-a-script" class="section level3">
 <h3>Step 5: Try calling a script</h3>
-<p><input type="checkbox">To run a script using the docker container we
+<p><input type="checkbox"> To run a script using the docker container we
 could just add reference to a script at the end:</p>
 <pre><code>podman exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash run_analysis.sh</code></pre>
 <p><strong>BUT! You will find that this command won’t work yet though,
@@ -450,12 +450,12 @@ class="section level3">
 <code>$PWD</code> Then optionally we can give a <code>:</code> and a
 file path we’d like this to be stored on on the container. Otherwise it
 will be stored at the absolute top of the container.</p>
-<p><input type="checkbox">Now we can run:</p>
+<p><input type="checkbox"> Now we can run:</p>
 <pre><code>podman run -v $PWD:/home cansav09/practice-image:1</code></pre>
 </div>
 <div id="step-3-retry-calling-the-script" class="section level3">
 <h3>Step 3: Retry calling the script</h3>
-<p><input type="checkbox">Now we can run:</p>
+<p><input type="checkbox"> Now we can run:</p>
 <pre><code>podman exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
 <p>Now we have a new error! What does this mean?</p>
 <p><strong>Question: Does our container have all of the same software
