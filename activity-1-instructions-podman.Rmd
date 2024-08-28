@@ -1,4 +1,5 @@
 ---
+title: Getting started with Podman
 output:
   html_document:
     toc: true
@@ -8,7 +9,10 @@ output:
     number_sections: false
 css: style.css
 ---
-# Activity 0: Getting started with Podman
+```{r echo = FALSE, show = FALSE}
+knitr::opts_chunk$set(number_sections = FALSE)
+```
+# Activity 0: Set Up Podman
 
 <input type="checkbox">Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox  
 <input type="checkbox">Click the green button that says "Code" and choose zip file.  
@@ -41,12 +45,12 @@ podman pull cansav09/practice-image:1
 
 ### Step 2: Check what images you have
 
-<input type="checkbox">To see what images we have we can run `docker image ls`.
-<input type="checkbox">You should see `cansav09/practice-image:1` show up in the output.
+<input type="checkbox">To see what images we have we can run `docker image ls`.  
+<input type="checkbox">You should see `cansav09/practice-image:1` show up in the output.  
 
 ### Step 3: Run the docker image to start a container!
 
-<input type="checkbox">Now if want to launch the image for use, we can use `podman run` to turn it into a **container**
+<input type="checkbox">Now if want to launch the image for use, we can use `podman run` to turn it into a **container**. 
 
 ```
 podman run cansav09/practice-image:1
@@ -91,8 +95,8 @@ Point it so the volume has the workshop files
 
 If we want to run `run_analysis.sh` there's two ways we could get our files on there.
 
-- We could download the files we need from online! We could `git clone` files from a repository or otherwise `wget` or `curl` files.
-- We could add a `volume` of files that are local to our computer. For this we will use the You'll `-v` or volume option.
+- We could download the files we need from online! We could `git clone` files from a repository or otherwise `wget` or `curl` files.  
+- We could add a `volume` of files that are local to our computer. For this we will use the You'll `-v` or volume option. We're going to do this in the next step.  
 
 ### Step 2: Let’s add our containers-for-scientists-sandbox files
 

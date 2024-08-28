@@ -1,4 +1,5 @@
 ---
+title: Sharing a Docker image
 output:
   html_document:
     toc: true
@@ -8,7 +9,9 @@ output:
     number_sections: false
 css: style.css
 ---
-# Sharing a Docker image
+```{r echo = FALSE, show = FALSE}
+knitr::opts_chunk$set(number_sections = FALSE)
+```
 
 To share our docker image with others (or ourselves), we can push it to an online repository.
 

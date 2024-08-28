@@ -1,4 +1,5 @@
 ---
+title: Troubleshooting a Docker image
 output:
   html_document:
     toc: true
@@ -8,8 +9,9 @@ output:
     number_sections: false
 css: style.css
 ---
-
-# Troubleshooting a Docker image
+```{r echo = FALSE, show = FALSE}
+knitr::opts_chunk$set(number_sections = FALSE)
+```
 
 There are three Dockerfiles in this folder. Each has something slightly wrong with it.
 
