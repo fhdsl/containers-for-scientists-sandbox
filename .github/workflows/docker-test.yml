@@ -4,7 +4,7 @@
 name: Build Docker Image
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       directory:
         required: true
@@ -33,10 +33,10 @@ jobs:
 
     steps:
       - name: checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Verify Dockerfiles changed?
-        uses: tj-actions/verify-changed-files@v8.8
+        uses: tj-actions/verify-changed-files@v17
         id: verify-changed-files
         with:
           files: |
@@ -45,7 +45,6 @@ jobs:
 
       - name: Login as jhudsl-robot
         run: |
-          git config --local --add safe.directory "$GITHUB_WORKSPACE"
           git config --local user.email "itcrtrainingnetwork@gmail.com"
           git config --local user.name "jhudsl-robot"
 
@@ -69,7 +68,7 @@ jobs:
         run: echo ${{ secrets.GH_PAT }} > ${{ inputs.directory }}/git_token.txt
 
       - name: Build Docker image
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v2
         with:
           push: false
           load: true
@@ -80,7 +79,7 @@ jobs:
       # Login to Dockerhub
       - name: Login to DockerHub
         if: ${{ inputs.dockerhubpush != 'false' }}
-        uses: docker/login-action@v2
+        uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
