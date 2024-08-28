@@ -26,7 +26,7 @@ Go here to [install Podman](https://podman.io/docs/installation), following the 
 
 <input type="checkbox"> Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).
 
-<input type="checkbox">Start up Podman by running the following:
+<input type="checkbox"> Start up Podman by running the following:
 
 ```
 podman machine init
@@ -34,6 +34,13 @@ podman machine start
 ```
 
 ## Activity 1: Pull and run a Docker image
+
+**This activity is built so that you will encounter errors that this guide will work you through!** 
+Most common container stumbling block is understanding the idea that containers are isolated from your computer
+
+Which means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there. 
+
+We will encounter both an error of when we don't have a file we need AND an error of when we don't have a software package we need. We will guide you through what to do when these expected errors occur. 
 
 ### Step 1: Docker pull
 
@@ -47,12 +54,12 @@ podman pull cansav09/practice-image:1
 
 ### Step 2: Check what images you have
 
-<input type="checkbox">To see what images we have we can run `docker image ls`.  
-<input type="checkbox">You should see `cansav09/practice-image:1` show up in the output.  
+<input type="checkbox"> To see what images we have we can run `docker image ls`.  
+<input type="checkbox"> You should see `cansav09/practice-image:1` show up in the output.  
 
-### Step 3: Run the docker image to start a container!
+### Step 3: Run the Docker image to start a container!
 
-<input type="checkbox">Now if want to launch the image for use, we can use `podman run` to turn it into a **container**. 
+<input type="checkbox" >Now if want to launch the image for use, we can use `podman run` to turn it into a **container**. 
 
 ```
 podman run cansav09/practice-image:1
