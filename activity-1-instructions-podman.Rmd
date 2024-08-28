@@ -81,7 +81,6 @@ podman exec -it <PUT_CONTAINER_ID_HERE> bash
 ### Step 5: Try calling a script
 
 <input type="checkbox"> To run a script using the podman container we could just add reference to a script at the end:  
-
 ```
 podman exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
 ```
@@ -122,6 +121,7 @@ podman run -v ${pwd}:/home cansav09/practice-image:1
 ### Step 2: Retry calling the script
 
 <input type="checkbox"> Now we can run the folowing command but we will have to run `podman ps` and get the container ID we need to put here.   
+
 ```
 podman exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```
