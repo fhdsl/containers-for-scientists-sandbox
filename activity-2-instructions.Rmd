@@ -1,17 +1,21 @@
 ---
+title: Build/Modify a Docker/Podman image
 output:
   html_document:
     toc: true
     toc_float:
       toc_collapsed: true
     toc_depth: 3
-    number_sections: true
+    number_sections: false
+css: style.css
 ---
-# Activity 2:  Build/Modify a Docker/Podman image
+```{r echo = FALSE, show = FALSE}
+knitr::opts_chunk$set(number_sections = FALSE)
+```
 
 A Dockerfile is a recipe for how to build a docker image. The best way to learn to write Dockerfiles is to start off with one that is already written and modify it for your needs.
 
-Open up the Dockerfile in the  `activity-files` folder.
+<input type="checkbox"> Open up the Dockerfile in the  `activity-files` folder.  
 
 You'll notice we have this at the top for you:
 ```
@@ -22,17 +26,18 @@ This means we're going to take the existing image called, `cansav09/practice-ima
 This image will be our base. There are so many Docker images out there, that it might be that someone has already created a docker image with most of the functionality you need for your project.
 
 ### Step 1: Use any file editor to open up the Dockerfile
+Usually double clicking will work. 
 
 ### Step 2: Inspect the Dockerfile
-- [ ] Double click it and open the file to take a look at it with any default text editor.  
+<input type="checkbox"> Double click it and open the file to take a look at it with any default text editor.    
 
 ### Step 3: Change your working directory to activity-files
 
-- [ ]  Now in your Command Prompt or Terminal navigate to the `activity-files` folder. Use `cd` and don't forget to use tabs so you don't have to spell everything exactly
+<input type="checkbox">  Now in your Command Prompt or Terminal navigate to the `activity-files` folder. Use `cd` and don't forget to use tabs so you don't have to spell everything exactly.  
 
 ### Step 4: Build the image from the Dockerfile
 
-- [ ]  With `activity-files` as your working directory, run the following:
+<input type="checkbox">  With `activity-files` as your working directory, run the following:  
 
 ```
 docker build . -t cool-new-image
@@ -46,7 +51,7 @@ Optionally you could call this from somewhere else and use the `-f` option to sp
 
 ### Step 4: Inspect new image!
 
-- [ ] Let's see if we have an image!
+<input type="checkbox"> Let's see if we have an image!  
 ```
 docker image ls
 ```
@@ -57,9 +62,8 @@ podman image ls
 
 ### Step 5: Run the new image
 
-- [ ]  Navigate back to your Docker desktop and the `images` window or run `docker ps` or `podman ps`. If your image built successfully, you should see a new image in your list!
-
-- [ ] Let's try running that image
+<input type="checkbox">  Navigate back to your Docker desktop and the `images` window or run `docker ps` or `podman ps`. If your image built successfully, you should see a new image in your list!   
+<input type="checkbox"> Let's try running that image.  
 
 ```
 docker run cool-new-image
@@ -71,25 +75,25 @@ podman run cool-new-image
 
 ### Step 6: See the minor difference!
 
-- [ ] We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image
+<input type="checkbox"> We should have a message: `Yay! I built a Docker image` pop up upon building the image. Not super useful but we can see how we've edited the original image.   
 
 ### Step 7: Edit the Dockerfile so it has the installation step for rmarkdown package and remove the CMD step
 
 For anything we need ran in this image we are building we need to use the `RUN` command followed by the installation steps we'd need.
 
-- [ ] Open up the file called `Dockerfile` in `activity-files`.
-- [ ] **Copy and paste** this into your Dockerfile below where it says `# Add a new package here ` so we can add the `rmarkdown` package.
+<input type="checkbox"> Open up the file called `Dockerfile` in `activity-files`.  
+<input type="checkbox"> **Copy and paste** this into your Dockerfile below where it says `# Add a new package here ` so we can add the `rmarkdown` package.  
 
 ```
 RUN Rscript -e  "options(warn = 2);install.packages('rmarkdown', \
     repos = 'https://cloud.r-project.org/')"
 ```
-- [ ] **AND remove the `CMD` line**
-- [ ] Save your edited Dockerfile.
+<input type="checkbox"> **AND remove the `CMD` line**.  
+<input type="checkbox"> Save your edited Dockerfile.  
 
 ### Step 8: Re-build now that we’ve edited the Dockerfile
 
-Now re-run `docker build` (or `podman build`) as you did in the previous section. This time we'll add a versioning tag using `:` in the `-t` option
+<input type="checkbox">Now re-run `docker build` (or `podman build`) as you did in the previous section. This time we'll add a versioning tag using `:` in the `-t` option.  
 
 ```
 docker build . -t cool-new-image:2
@@ -112,7 +116,7 @@ If all built successfully, you should see a message like:
 
 Now let's retry running the script from here but we will need to specify the volume again!
 
-- [ ] First run the container using the `2` image:
+<input type="checkbox"> First run the container using the `2` image:  
 ```
 docker run -v $PWD:/home cool-new-image:2
 ```
@@ -123,10 +127,8 @@ podman run -v $PWD:/home cool-new-image:2
 
 ### Step 10: Re-Retry calling the script
 
-- [ ] Run `docker ps` or `podman ps` can get you the container ID. Or look on your Docker Desktop
-
-
-- [ ] Try running the script using the following command:
+<input type="checkbox"> Run `docker ps` or `podman ps` can get you the container ID. Or look on your Docker Desktop. 
+<input type="checkbox"> Try running the script using the following command:  
 ```
 docker exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```

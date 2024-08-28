@@ -1,25 +1,30 @@
 ---
+title: Getting started with Podman
 output:
   html_document:
     toc: true
     toc_float:
       toc_collapsed: true
     toc_depth: 3
-    number_sections: true
+    number_sections: false
+css: style.css
 ---
-# Activity 0: Getting started with Podman
+```{r echo = FALSE, show = FALSE}
+knitr::opts_chunk$set(number_sections = FALSE)
+```
+# Activity 0: Set Up Podman
 
-- [ ] Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox
-- [ ] Click the green button that says "Code" and choose zip file.
-- [ ] Double click or right click and choose "unzip" or "decompress" to unzip this file.
+<input type="checkbox">Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox  
+<input type="checkbox">Click the green button that says "Code" and choose zip file.  
+<input type="checkbox">Double click or right click and choose "unzip" or "decompress" to unzip this file.  
 
 ## Install Podman
 
 Go here to [install Podman](https://podman.io/docs/installation), following the instructions for your particular operating system.
 
-1. Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).
+<input type="checkbox"> Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).
 
-2. Start up Podman by running the following:
+<input type="checkbox">Start up Podman by running the following:
 
 ```
 podman machine init
@@ -30,9 +35,9 @@ podman machine start
 
 ### Step 1: Docker pull
 
-- [ ] We need to get the Docker **image** we want to use. We do this by "pulling" it.
+We need to get the Docker **image** we want to use. We do this by "pulling" it.
 
-Run this command in your Terminal or Command Prompt window:
+<input type="checkbox"> Run this command in your Terminal or Command Prompt window:
 
 ```
 podman pull cansav09/practice-image:1
@@ -40,17 +45,18 @@ podman pull cansav09/practice-image:1
 
 ### Step 2: Check what images you have
 
-- [ ] To see what images we have we can run `docker image ls` and we should see `cansav09/practice-image:1` show up now.
+<input type="checkbox">To see what images we have we can run `docker image ls`.  
+<input type="checkbox">You should see `cansav09/practice-image:1` show up in the output.  
 
 ### Step 3: Run the docker image to start a container!
 
-- [ ] Now if want to launch the image for use, we can use `podman run` to turn it into a **container**
+<input type="checkbox">Now if want to launch the image for use, we can use `podman run` to turn it into a **container**. 
 
 ```
 podman run cansav09/practice-image:1
 ```
 
-- [ ] To see what containers we have running we have we can run:
+<input type="checkbox">To see what containers we have running we have we can run:
 
 ```
 podman ps
@@ -58,7 +64,7 @@ podman ps
 
 ### Step 4: Run a single command
 
-- [ ] To run stuff interactively from the command line we can do:
+<input type="checkbox">To run stuff interactively from the command line we can do:
 
 ```
 podman exec -it <PUT_CONTAINER_ID_HERE> bash
@@ -66,7 +72,7 @@ podman exec -it <PUT_CONTAINER_ID_HERE> bash
 
 ### Step 5: Try calling a script
 
-- [ ] To run a script using the docker container we could just add reference to a script at the end:
+<input type="checkbox">To run a script using the docker container we could just add reference to a script at the end:
 
 ```
 podman exec -it <PUT_CONTAINER_ID_HERE> bash run_analysis.sh
@@ -89,21 +95,21 @@ Point it so the volume has the workshop files
 
 If we want to run `run_analysis.sh` there's two ways we could get our files on there.
 
-- We could download the files we need from online! We could `git clone` files from a repository or otherwise `wget` or `curl` files.
-- We could add a `volume` of files that are local to our computer. For this we will use the You'll `-v` or volume option.
+- We could download the files we need from online! We could `git clone` files from a repository or otherwise `wget` or `curl` files.  
+- We could add a `volume` of files that are local to our computer. For this we will use the You'll `-v` or volume option. We're going to do this in the next step.  
 
 ### Step 2: Let’s add our containers-for-scientists-sandbox files
 
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
-- [ ] Now we can run:
+<input type="checkbox">Now we can run:
 ```
 podman run -v $PWD:/home cansav09/practice-image:1
 ```
 
 ### Step 3: Retry calling the script
 
-- [ ] Now we can run:
+<input type="checkbox">Now we can run:
 ```
 podman exec -it <REPLACE_WITH_CONTAINER_ID> bash /home/run_analysis.sh
 ```

@@ -1,5 +1,5 @@
-# Candace Savonen May 2022
-
+# Candace Savonen Dec 2021
+# Updated Aug 2024
 name: Pull Request
 
 on:
@@ -175,35 +175,3 @@ jobs:
 
             _Updated at ${{ steps.build-components.outputs.time }} with changes from ${{ steps.build-components.outputs.commit_id }}_
           edit-mode: replace
-
-  dockerfiles-changed:
-    name: Detect changed Dockerfiles
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Get specific changed files
-        id: base_ottr
-        uses: tj-actions/changed-files@v14.5
-        with:
-          files: base_ottr/*
-
-      - run: |
-          echo ${{steps.base_ottr.outputs.any_changed}}
-
-    outputs:
-      base_ottr_changed: ${{steps.base_ottr.outputs.any_changed}}
-
-  build-base:
-    name: Build base ottr image
-    needs: dockerfiles-changed
-    if: ${{needs.dockerfiles-changed.outputs.base_ottr_changed == 'true'}}
-    uses: ./.github/workflows/docker-test.yml
-    with:
-      directory: base_ottr
-      tag: jhudsl/base_ottr
-    secrets:
-      GH_PAT: ${{ secrets.GH_PAT }}
