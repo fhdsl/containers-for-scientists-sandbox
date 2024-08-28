@@ -13,7 +13,7 @@
 
 <title>Getting started with Docker</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27.1/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -377,7 +377,8 @@ Prompt window:</p>
 <div id="step-2-check-what-images-you-have" class="section level3">
 <h3>Step 2: Check what images you have</h3>
 <p><input type="checkbox"> To see what images we have we can run
-<code>docker image ls</code>. <input type="checkbox"> We should see
+<code>docker image ls</code>.<br />
+<input type="checkbox"> We should see
 <code>cansav09/practice-image:1</code> show up in the output.</p>
 </div>
 <div id="step-3-run-the-docker-image-to-start-a-container"
@@ -385,7 +386,7 @@ class="section level3">
 <h3>Step 3: Run the docker image to start a container!</h3>
 <p><input type="checkbox"> Now if want to launch the image for use, we
 can use <code>docker run</code> to turn it into a
-<strong>container</strong></p>
+<strong>container</strong>.</p>
 <pre><code>docker run cansav09/practice-image:1</code></pre>
 <p><input type="checkbox"> To see what containers we have running we
 have we can run:</p>
@@ -401,13 +402,13 @@ line we can do:</p>
 <h3>Step 5: Try calling a script</h3>
 <p><input type="checkbox"> To run a script using the docker container we
 could just add reference to a script at the end:</p>
+<pre><code>docker exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash run_analysis.sh</code></pre>
 <p><strong>BUT! You will find that this command won’t work yet though,
 why?</strong></p>
-<pre><code>docker exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash run_analysis.sh</code></pre>
+<pre><code>bash: run_analysis.sh: No such file or directory</code></pre>
 <p>This won’t work because the file <code>run_analysis.sh</code> is not
 a file that our container has. Docker containers do not have all the
 files that our computer does; they only have the files we add to it.</p>
-<pre><code>bash: run_analysis.sh: No such file or directory</code></pre>
 </div>
 </div>
 <div id="activity-1b-add-a-volume-to-the-image" class="section level2">
@@ -426,7 +427,7 @@ could get our files on there.</p>
 <code>wget</code> or <code>curl</code> files.</li>
 <li>We could add a <code>volume</code> of files that are local to our
 computer. For this we will use the You’ll <code>-v</code> or volume
-option.</li>
+option. We’ll do this in the next step.</li>
 </ul>
 </div>
 <div id="step-2-lets-add-our-containers-for-scientists-sandbox-files"
