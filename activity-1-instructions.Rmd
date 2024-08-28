@@ -14,7 +14,9 @@ knitr::opts_chunk$set(number_sections = FALSE)
 ```
 
 # Activity 0: Set Up Docker
-
+<input type="checkbox"> Download the files for this activity by going here: https://github.com/fhdsl/containers-for-scientists-sandbox  
+<input type="checkbox"> Put this file on your desktop so it is easily findable. 
+<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file. 
 <input type="checkbox"> Go here to [install Docker](https://www.docker.com/get-started), following the instructions for your particular operating system.    
 <input type="checkbox"> If you don't have a Docker account create an account when prompted, or [go here](https://hub.docker.com/).    
 <input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.    
