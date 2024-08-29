@@ -6,16 +6,14 @@ This GitHub repository is sandbox of Docker to play with for the purposes of a w
 
 ## Files and set up
 
-This repository contains some mock scripts and files to mimic what a code analysis repository might look like so Docker within this context can be demonstrated.
+This repository contains some mock scripts and files to mimic what a code analysis repository might look like so Docker within this context can be demonstrated. There are also alternative instructions for if people prefer to use [`podman` and open source command line container management software](https://podman.io/). 
 
 There are four activities:  
 
 - [`activity-1-pulling-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-1-instructions.html)
-- [`activity-1-pulling-a-docker-image-podman`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-1-instructions-podman.html)
 - [`activity-2-modify-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-2-instructions.html)
 - [`activity-3-building-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-3-instructions.html)
 - [`activity-4-troubleshooting-a-docker-image`](https://hutchdatascience.org/containers-for-scientists-sandbox/activity-4-instructions.html)
-
 
 Additionally, the `utils` folder has files that are referenced by some of the GitHub Actions. The `data` folder has a dataset that is utilized by the mock analysis files that are used for this tutorial.
 
