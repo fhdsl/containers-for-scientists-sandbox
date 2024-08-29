@@ -372,10 +372,11 @@ up.</p>
 <p><input type="checkbox"> Download the files for this activity clicking
 here: <a
 href="https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip"
-class="uri">https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip</a>
+class="uri">https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip</a><br />
 <input type="checkbox"> Put this file on your desktop so it is easily
-findable. <input type="checkbox"> Double click the zip file (or right
-click and choose “unzip” or “decompress” to unzip the file.</p>
+findable.<br />
+<input type="checkbox"> Double click the zip file (or right click and
+choose “unzip” or “decompress” to unzip the file.</p>
 </div>
 <div id="activity-1-pull-and-run-a-docker-image" class="section level3">
 <h3>Activity 1: Pull and run a Docker image</h3>
@@ -446,25 +447,24 @@ file we have to attach it using a “volume”.</p>
 <div id="step-1-lets-add-our-containers-for-scientists-sandbox-files"
 class="section level4">
 <h4>Step 1: Let’s add our containers-for-scientists-sandbox files</h4>
-<p>Point it so the volume has the workshop files</p>
+<p>Let’s point a volume to our workshop files so we have them on our
+container.</p>
+<details>
+</summary>
+Other ways we could get files on a container
+</summary>
 <p>If we want to run <code>run_analysis.sh</code> there’s two ways we
-could get our files on there.</p>
-<ul>
-<li>We could download the files we need from online! We could
-<code>git clone</code> files from a repository or otherwise
-<code>wget</code> or <code>curl</code> files.</li>
-<li>We could add a <code>volume</code> of files that are local to our
-computer. For this we will use the You’ll <code>-v</code> or volume
-option. We’ll do this in the next step.</li>
-</ul>
-</div>
-<div id="step-2-lets-add-our-containers-for-scientists-sandbox-files"
-class="section level4">
-<h4>Step 2: Let’s add our containers-for-scientists-sandbox files</h4>
-<p>We can specify a particular file path on our computer or give it
+could get our files on there. - We could download the files we need from
+online! We could <code>git clone</code> files from a repository or
+otherwise <code>wget</code> or <code>curl</code> files. - We could add a
+<code>volume</code> of files that are local to our computer. For this we
+will use the You’ll <code>-v</code> or volume option. We’ll do this in
+the next step.</p>
+We can specify a particular file path on our computer or give it
 <code>$PWD</code> Then optionally we can give a <code>:</code> and a
 file path we’d like this to be stored on on the container. Otherwise it
-will be stored at the absolute top of the container.</p>
+will be stored at the absolute top of the container.
+</details>
 <p><input type="checkbox"> Now we can run:</p>
 <pre><code>docker run -v $pwd:/home cansav09/practice-image:1</code></pre>
 <p>If you have a windows machine you may have to run this variant
@@ -490,11 +490,11 @@ that our computer has?</strong></p>
 <h3>Set up Podman</h3>
 <p><input type="checkbox"> Go here to <a
 href="https://podman.io/docs/installation">install Podman</a>, following
-the instructions for your particular operating system.
+the instructions for your particular operating system.<br />
 <input type="checkbox"> Open up your <a
 href="https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955">command
-line</a>. <input type="checkbox"> Start up Podman by running the
-following:</p>
+line</a>.<br />
+<input type="checkbox"> Start up Podman by running the following:</p>
 <pre><code>podman machine init
 podman machine start</code></pre>
 </div>
@@ -503,10 +503,11 @@ podman machine start</code></pre>
 <p><input type="checkbox"> Download the files for this activity clicking
 here: <a
 href="https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip"
-class="uri">https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip</a>
+class="uri">https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip</a><br />
 <input type="checkbox"> Put this file on your desktop so it is easily
-findable. <input type="checkbox"> Double click the zip file (or right
-click and choose “unzip” or “decompress” to unzip the file.</p>
+findable.<br />
+<input type="checkbox"> Double click the zip file (or right click and
+choose “unzip” or “decompress” to unzip the file.</p>
 </div>
 <div id="activity-1-pull-and-run-an-image" class="section level3">
 <h3>Activity 1: Pull and run an image</h3>
@@ -563,20 +564,30 @@ file we have to attach it using a “volume”.</p>
 <div id="step-1-lets-add-our-containers-for-scientists-sandbox-files-1"
 class="section level4">
 <h4>Step 1: Let’s add our containers-for-scientists-sandbox files</h4>
-<p>Point it so the volume has the workshop files</p>
-<p>If we want to run <code>run_analysis.sh</code> there’s two ways we
-could get our files on there. - We could download the files we need from
+<p>Let’s point a volume to our workshop files so we have them on our
+container.</p>
+<details>
+</summary>
+Other ways we could get files on a container
+</summary>
+If we want to run <code>run_analysis.sh</code> there’s two ways we could
+get our files on there. - We could download the files we need from
 online! We could <code>git clone</code> files from a repository or
 otherwise <code>wget</code> or <code>curl</code> files.<br />
 - We could add a <code>volume</code> of files that are local to our
 computer. For this we will use the You’ll <code>-v</code> or volume
-option. We’re going to do this in the next step.</p>
-<p>We can specify a particular file path on our computer or give it
-<code>$PWD</code> Then optionally we can give a <code>:</code> and a
-file path we’d like this to be stored on on the container. Otherwise it
-will be stored at the absolute top of the container.</p>
+option. We’re going to do this in the next step.
+</details>
+<p>We will specify a particular file path on our computer or give it
+<code>$pwd</code> Then we can give a <code>:</code> and a file path we’d
+like this to be stored on on the container. Otherwise it will be stored
+at the absolute top of the container.</p>
 <p><input type="checkbox"> Now we can run:</p>
-<pre><code>podman run -v $PWD:/home cansav09/practice-image:1</code></pre>
+<pre><code>podman run -v $pwd:/home cansav09/practice-image:1</code></pre>
+<p>If you have a windows machine you may have to run this variant
+instead. This version has a different <code>${}</code> around the
+<code>pwd</code> part.</p>
+<pre><code>podman run -v ${pwd}:/home cansav09/practice-image:1</code></pre>
 </div>
 <div id="step-2-retry-calling-the-script-1" class="section level4">
 <h4>Step 2: Retry calling the script</h4>
