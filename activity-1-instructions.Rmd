@@ -23,9 +23,9 @@ knitr::opts_chunk$set(number_sections = FALSE)
 <input type="checkbox"> After you install Docker, start up Docker desktop by double clicking on the app. It may take some time to start up.    
 
 ### Get workshop files
-<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip
-<input type="checkbox"> Put this file on your desktop so it is easily findable.
-<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.
+<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip  
+<input type="checkbox"> Put this file on your desktop so it is easily findable.  
+<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.  
 
 ### Activity 1: Pull and run a Docker image
 
@@ -98,16 +98,16 @@ Our container is separate from our computer so if we want to use a file we have 
 
 #### Step 1: Let’s add our containers-for-scientists-sandbox files
 
-Point it so the volume has the workshop files
+Let's point a volume to our workshop files so we have them on our container.
+
+<details> </summary> Other ways we could get files on a container </summary>
 
 If we want to run `run_analysis.sh` there's two ways we could get our files on there.
-
 - We could download the files we need from online! We could `git clone` files from a repository or otherwise `wget` or `curl` files.
 - We could add a `volume` of files that are local to our computer. For this we will use the You'll `-v` or volume option. We'll do this in the next step.
 
-#### Step 2: Let’s add our containers-for-scientists-sandbox files
-
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
+</details>
 
 <input type="checkbox"> Now we can run:  
 ```
@@ -129,18 +129,18 @@ Now we have a new error! What does this mean?
 
 ## Podman
 ### Set up Podman
-<input type="checkbox"> Go here to [install Podman](https://podman.io/docs/installation), following the instructions for your particular operating system.
-<input type="checkbox"> Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).
-<input type="checkbox"> Start up Podman by running the following:
+<input type="checkbox"> Go here to [install Podman](https://podman.io/docs/installation), following the instructions for your particular operating system.  
+<input type="checkbox"> Open up your [command line](https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955).  
+<input type="checkbox"> Start up Podman by running the following:  
 ```
 podman machine init
 podman machine start
 ```
 
 ### Get workshop files
-<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip
-<input type="checkbox"> Put this file on your desktop so it is easily findable.
-<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.
+<input type="checkbox"> Download the files for this activity clicking here: https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip  
+<input type="checkbox"> Put this file on your desktop so it is easily findable.  
+<input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.  
 
 ### Activity 1: Pull and run an image
 
@@ -202,19 +202,24 @@ Our container is separate from our computer so if we want to use a file we have 
 
 #### Step 1: Let’s add our containers-for-scientists-sandbox files
 
-Point it so the volume has the workshop files
+Let's point a volume to our workshop files so we have them on our container.
 
+<details> </summary> Other ways we could get files on a container </summary>
 If we want to run `run_analysis.sh` there's two ways we could get our files on there.
 - We could download the files we need from online! We could `git clone` files from a repository or otherwise `wget` or `curl` files.  
 - We could add a `volume` of files that are local to our computer. For this we will use the You'll `-v` or volume option. We're going to do this in the next step.  
+</details>
 
-We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
+We will specify a particular file path on our computer or give it `$pwd` Then we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
 <input type="checkbox"> Now we can run:
 ```
-podman run -v $PWD:/home cansav09/practice-image:1
+podman run -v $pwd:/home cansav09/practice-image:1
 ```
-
+If you have a windows machine you may have to run this variant instead. This version has a different `${}` around the `pwd` part.
+```
+podman run -v ${pwd}:/home cansav09/practice-image:1
+```
 #### Step 2: Retry calling the script
 
 <input type="checkbox"> Now we can run:
