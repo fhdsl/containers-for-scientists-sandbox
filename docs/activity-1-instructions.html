@@ -13,7 +13,7 @@
 
 <title>Getting started with Containers</title>
 
-<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.27.1/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -323,16 +323,13 @@ div.tocify {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="activity-1-instructions.html">1 Getting Started with Docker</a>
-</li>
-<li>
-  <a href="activity-1-instructions-podman.html">1 Getting Started with Podman</a>
+  <a href="activity-1-instructions.html">1 Getting Started with Containers</a>
 </li>
 <li>
   <a href="activity-2-instructions.html">2 Modifying Images</a>
 </li>
 <li>
-  <a href="activity-4-instructions.html">3 Sharing Images</a>
+  <a href="activity-3-instructions.html">3 Sharing Images</a>
 </li>
 <li>
   <a href="activity-4-instructions.html">4 Troubleshooting</a>
@@ -354,21 +351,13 @@ div.tocify {
 </div>
 
 
-
-<div id="instruction-type" class="section level1 tabset">
-<h1 class="tabset">Instruction type</h1>
+<div id="section" class="section level1 tabset">
+<h1 class="tabset"></h1>
 <div id="docker" class="section level2">
 <h2>Docker</h2>
-<div id="set-up-docker-and-workshop-files" class="section level3">
-<h3>Set up Docker and workshop files</h3>
-<p><input type="checkbox"> Download the files for this activity by going
-here: <a
-href="https://github.com/fhdsl/containers-for-scientists-sandbox"
-class="uri">https://github.com/fhdsl/containers-for-scientists-sandbox</a><br />
-<input type="checkbox"> Put this file on your desktop so it is easily
-findable. <input type="checkbox"> Double click the zip file (or right
-click and choose “unzip” or “decompress” to unzip the file.
-<input type="checkbox"> Go here to <a
+<div id="set-up" class="section level3">
+<h3>Set up</h3>
+<p><input type="checkbox"> Go here to <a
 href="https://www.docker.com/get-started">install Docker</a>, following
 the instructions for your particular operating system.<br />
 <input type="checkbox"> If you don’t have a Docker account create an
@@ -377,6 +366,16 @@ here</a>.<br />
 <input type="checkbox"> After you install Docker, start up Docker
 desktop by double clicking on the app. It may take some time to start
 up.</p>
+</div>
+<div id="get-workshop-files" class="section level3">
+<h3>Get workshop files</h3>
+<p><input type="checkbox"> Download the files for this activity clicking
+here: <a
+href="https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip"
+class="uri">https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip</a>
+<input type="checkbox"> Put this file on your desktop so it is easily
+findable. <input type="checkbox"> Double click the zip file (or right
+click and choose “unzip” or “decompress” to unzip the file.</p>
 </div>
 <div id="activity-1-pull-and-run-a-docker-image" class="section level3">
 <h3>Activity 1: Pull and run a Docker image</h3>
@@ -474,10 +473,9 @@ instead. This version has a different <code>${}</code> around the
 <pre><code>docker run -v ${pwd}:/home cansav09/practice-image:1</code></pre>
 </div>
 </div>
-
 <div id="step-2-retry-calling-the-script" class="section level3">
 <h3>Step 2: Retry calling the script</h3>
-<p><input type="checkbox"> Now we can run the folowing command but we
+<p><input type="checkbox"> Now we can run the following command but we
 will have to run <code>docker ps</code> and get the container ID we need
 to put here.</p>
 <pre><code>docker exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
@@ -488,25 +486,27 @@ that our computer has?</strong></p>
 </div>
 <div id="podman" class="section level2">
 <h2>Podman</h2>
-<p><input type="checkbox"> Download the files for this activity by going
-here: <a
-href="https://github.com/fhdsl/containers-for-scientists-sandbox"
-class="uri">https://github.com/fhdsl/containers-for-scientists-sandbox</a><br />
-<input type="checkbox"> Click the green button that says “Code” and
-choose zip file.<br />
-<input type="checkbox"> Double click or right click and choose “unzip”
-or “decompress” to unzip this file.</p>
-<div id="install-podman" class="section level3">
-<h3>Install Podman</h3>
-<p>Go here to <a href="https://podman.io/docs/installation">install
-Podman</a>, following the instructions for your particular operating
-system.</p>
-<p><input type="checkbox"> Open up your <a
+<div id="set-up-podman" class="section level3">
+<h3>Set up Podman</h3>
+<p><input type="checkbox"> Go here to <a
+href="https://podman.io/docs/installation">install Podman</a>, following
+the instructions for your particular operating system.
+<input type="checkbox"> Open up your <a
 href="https://towardsdatascience.com/a-quick-guide-to-using-command-line-terminal-96815b97b955">command
-line</a>.</p>
-<p><input type="checkbox">Start up Podman by running the following:</p>
+line</a>. <input type="checkbox"> Start up Podman by running the
+following:</p>
 <pre><code>podman machine init
 podman machine start</code></pre>
+</div>
+<div id="get-workshop-files-1" class="section level3">
+<h3>Get workshop files</h3>
+<p><input type="checkbox"> Download the files for this activity clicking
+here: <a
+href="https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip"
+class="uri">https://github.com/fhdsl/containers-for-scientists-sandbox/archive/refs/heads/main.zip</a>
+<input type="checkbox"> Put this file on your desktop so it is easily
+findable. <input type="checkbox"> Double click the zip file (or right
+click and choose “unzip” or “decompress” to unzip the file.</p>
 </div>
 <div id="activity-1-pull-and-run-an-image" class="section level3">
 <h3>Activity 1: Pull and run an image</h3>
@@ -520,31 +520,31 @@ Prompt window:</p>
 </div>
 <div id="step-2-check-what-images-you-have-1" class="section level4">
 <h4>Step 2: Check what images you have</h4>
-<p><input type="checkbox">To see what images we have we can run
+<p><input type="checkbox"> To see what images we have we can run
 <code>podman image ls</code>.<br />
-<input type="checkbox">You should see
+<input type="checkbox"> You should see
 <code>cansav09/practice-image:1</code> show up in the output.</p>
 </div>
 <div id="step-3-run-the-docker-image-to-start-a-container-1"
 class="section level4">
 <h4>Step 3: Run the docker image to start a container!</h4>
-<p><input type="checkbox">Now if want to launch the image for use, we
+<p><input type="checkbox"> Now if want to launch the image for use, we
 can use <code>podman run</code> to turn it into a
 <strong>container</strong>.</p>
 <pre><code>podman run cansav09/practice-image:1</code></pre>
-<p><input type="checkbox">To see what containers we have running we have
-we can run:</p>
+<p><input type="checkbox"> To see what containers we have running we
+have we can run:</p>
 <pre><code>podman ps</code></pre>
 </div>
 <div id="step-4-run-a-single-command-1" class="section level4">
 <h4>Step 4: Run a single command</h4>
-<p><input type="checkbox">To run stuff interactively from the command
+<p><input type="checkbox"> To run stuff interactively from the command
 line we can do:</p>
 <pre><code>podman exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash</code></pre>
 </div>
 <div id="step-5-try-calling-a-script-1" class="section level4">
 <h4>Step 5: Try calling a script</h4>
-<p><input type="checkbox">To run a script using the docker container we
+<p><input type="checkbox"> To run a script using the docker container we
 could just add reference to a script at the end:</p>
 <pre><code>podman exec -it &lt;PUT_CONTAINER_ID_HERE&gt; bash run_analysis.sh</code></pre>
 <p><strong>BUT! You will find that this command won’t work yet though,
@@ -575,12 +575,12 @@ option. We’re going to do this in the next step.</p>
 <code>$PWD</code> Then optionally we can give a <code>:</code> and a
 file path we’d like this to be stored on on the container. Otherwise it
 will be stored at the absolute top of the container.</p>
-<p><input type="checkbox">Now we can run:</p>
+<p><input type="checkbox"> Now we can run:</p>
 <pre><code>podman run -v $PWD:/home cansav09/practice-image:1</code></pre>
 </div>
 <div id="step-2-retry-calling-the-script-1" class="section level4">
 <h4>Step 2: Retry calling the script</h4>
-<p><input type="checkbox">Now we can run:</p>
+<p><input type="checkbox"> Now we can run:</p>
 <pre><code>podman exec -it &lt;REPLACE_WITH_CONTAINER_ID&gt; bash /home/run_analysis.sh</code></pre>
 <p>Now we have a new error! What does this mean?</p>
 <p><strong>Question: Does our container have all of the same software
