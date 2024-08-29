@@ -5,14 +5,12 @@ navbar:
   left:
   - text: Home
     href: index.html
-  - text: 1 Getting Started with Docker
+  - text: 1 Getting Started with Containers
     href: activity-1-instructions.html
-  - text: 1 Getting Started with Podman
-    href: activity-1-instructions-podman.html
   - text: 2 Modifying Images
     href: activity-2-instructions.html
   - text: 3 Sharing Images
-    href: activity-4-instructions.html
+    href: activity-3-instructions.html
   - text: 4 Troubleshooting
     href: activity-4-instructions.html
 

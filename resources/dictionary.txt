@@ -8,6 +8,7 @@ Dockerfile
 Dockerhub
 dockerhub
 favicon
+findable
 GH
 Github
 GitHub
@@ -24,6 +25,7 @@ repo
 rmarkdown
 RMarkdown
 subdir
+tabset
 th
 tibble
 www
