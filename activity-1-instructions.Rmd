@@ -29,8 +29,6 @@ knitr::opts_chunk$set(number_sections = FALSE)
 
 ### Activity 1: Pull and run a Docker image
 
-#### Step 1: Docker pull
-
 **This activity is built so that you will encounter errors that this guide will work you through!**
 Most common container stumbling block is understanding the idea that containers are isolated from your computer
 
@@ -143,6 +141,13 @@ podman machine start
 <input type="checkbox"> Double click the zip file (or right click and choose "unzip" or "decompress" to unzip the file.  
 
 ### Activity 1: Pull and run an image
+
+**This activity is built so that you will encounter errors that this guide will work you through!**
+Most common container stumbling block is understanding the idea that containers are isolated from your computer
+
+Which means: If your computer has files, software, or anything else. Your container by default does NOT have it unless you do something to get those files and software on there.
+
+We will encounter both an error of when we don't have a file we need AND an error of when we don't have a software package we need. We will guide you through what to do when these expected errors occur.
 
 #### Step 1: Podman pull
 
