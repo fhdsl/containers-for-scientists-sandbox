@@ -2,3 +2,11 @@ ul {
   list-style-position: inside;
   padding-left: 0;
 }
+
+.click_to_expand_block {
+    padding: 1em;
+    padding-top: .5em;
+    border: 1px grey;
+    background: #E8E8E8;
+    color: black;
+}
