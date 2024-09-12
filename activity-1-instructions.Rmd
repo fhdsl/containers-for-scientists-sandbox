@@ -98,6 +98,7 @@ Our container is separate from our computer so if we want to use a file we have 
 
 Let's point a volume to our workshop files so we have them on our container.
 
+#### {.click_to_expand_block}
 <details> <summary> Click here for other ways to get files on a container. </summary>
 
 If we want to run `run_analysis.sh` there's two ways we could get our files on there.
@@ -106,6 +107,8 @@ If we want to run `run_analysis.sh` there's two ways we could get our files on t
 
 We can specify a particular file path on our computer or give it `$PWD` Then optionally we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 </details>
+
+####
 
 <input type="checkbox"> Now we can run:  
 ```
@@ -209,11 +212,14 @@ Our container is separate from our computer so if we want to use a file we have 
 
 Let's point a volume to our workshop files so we have them on our container.
 
+#### {.click_to_expand_block}
 <details> <summary> Click here for other ways to get files on a container.</summary>
 If we want to run `run_analysis.sh` there's two ways we could get our files on there.
 - We could download the files we need from online! We could `git clone` files from a repository or otherwise `wget` or `curl` files.  
 - We could add a `volume` of files that are local to our computer. For this we will use the You'll `-v` or volume option. We're going to do this in the next step.  
 </details>
+
+####
 
 We will specify a particular file path on our computer or give it `$pwd` Then we can give a `:` and a file path we'd like this to be stored on on the container. Otherwise it will be stored at the absolute top of the container.
 
